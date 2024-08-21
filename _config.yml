@@ -12,7 +12,7 @@ title                    : "Yuchen Zhou / Bio"
 title_separator          : "-"
 name                     : &name "Your Name"
 description              : &description "personal description"
-url                      : https://erwinzhou.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://academic.yc-zhou.com.cn # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ErwinZhou/erwinzhou.github.io"
 
