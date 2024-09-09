@@ -10,7 +10,7 @@
 locale                   : "en-US"
 title                    : "Yuchen Zhou / Bio"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Yuchen Zhou"
 description              : &description "personal description"
 url                      : https://academic.yc-zhou.com.cn # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
