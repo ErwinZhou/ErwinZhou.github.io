@@ -37,15 +37,15 @@ author:
   orcid            : "https://orcid.org/0009-0006-0087-8691"
   semantic         : # URL
   pubmed           : # URL
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Yuchen-Zhou-28"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
   github           : "https://github.com/ErwinZhou"
-  kaggle           : "ErwinZhou" 
-  stackoverflow    : "Erwin Zhou"
+  kaggle           : # Username 
+  stackoverflow    : # Username
 
   # Social media
   bluesky          : # Replace this with you Bluesky username
@@ -55,9 +55,9 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : "_erwinzhou_"
+  instagram        : # Username
   lastfm           : # Username
-  linkedin         : "Yuchen Zhou"
+  linkedin         : "https://www.linkedin.com/in/yuchen-zhou-325513317"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -65,13 +65,13 @@ author:
   steam            : # Username
   telegram         : # URL
   tumblr           : # Username
-  twitter          : "ErwinZhou_"
+  twitter          : # Username
   vine             : # Username
   weibo            : # Username
   wikipedia        : # Username
   xing             : # Username
-  youtube          : "周钰宸（ErwinZhou）"
-  zhihu            : "ErwinZhou"
+  youtube          : # Username
+  zhihu            : # Username
 
 
 # Site Settings
