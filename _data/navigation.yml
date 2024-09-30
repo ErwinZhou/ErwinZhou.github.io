@@ -5,21 +5,9 @@ main:
   - title: "Publications"
     url: /publications/
   - title: "Projects"
-    url: /projects/
-  # - title: "Talks"
-  #   url: /talks/    
-
-  # - title: "Teaching"
-  #   url: /teaching/    
-    
-  # - title: "Portfolio"
-  #   url: /portfolio/
-        
-  # - title: "Blog Posts"
-  #   url: /year-archive/
-    
-
-    
+    url: /projects/    
+  - title: "Awards"
+    url: /awards/
   - title: "Competitions"
     url: /competitions/
 
