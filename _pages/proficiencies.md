@@ -6,8 +6,12 @@ author_profile: true
 ---
 
 ## Langauge Proficiencies
+
+### Mandarin 
+#### Native Speaker
+  
 ### English 
-- **Second Language**
+#### Second Language
 1. **TOFEL**: 
    * **Official Website**: [TOFEL](https://www.ets.org/toefl)
    * **Record Score** (Internet Based): 
