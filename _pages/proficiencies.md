@@ -6,8 +6,6 @@ author_profile: true
 ---
 
 ## Langauge Proficiencies
-### Mandarin 
-- **Native Speaker**
 ### English 
 - **Second Language**
 1. **TOFEL**: 
