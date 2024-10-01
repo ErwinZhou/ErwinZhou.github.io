@@ -29,7 +29,7 @@ author_profile: true
  
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
   <div style="flex: 1; max-width: 300px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2022/demo-1.png" alt="PLDatabse" style="width: 100%;height=140%;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2022/demo-1.png" alt="PLDatabse" style="width: 100%;height=120%;">
   </div>
   <div style="flex: 2;">
     <h2 style="margin-top: 0;">Database System 2022: An Intelligent DBMS for Premier League</h2>
@@ -39,13 +39,10 @@ author_profile: true
   </div>
 </div>
 
-
-
-
 <div style="display: flex; align-items: flex-start; margin-bottom: 20px;">
   <div style="flex: 1; max-width: 300px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height=140%;">
-  </div
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height=160%;">
+  </div>
   <div style="flex: 2;">
     <h2 style="margin-top: 0;">Spatio-temporal analysis of big data population migration patterns</h2>
     <p><strong>Yuchen Zhou</strong>, Xiaoyang Ji, Haofu Yang, Qipeng Wang</p>
