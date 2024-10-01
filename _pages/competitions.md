@@ -7,15 +7,21 @@ author_profile: true
 
 ## China Undergraduate Mathematical Contest in Modeling (CUMCM)
 
-- **Track:** 
-- **Date:** 
-- **Achievement:** 
-- **Competition Link:**
-- **Our Solution:** 
-- **Award Certificate:** 
+- **Division:** Tianjin, China
+- **Date:** November 12, 2023 
+- **Achievement:** Second Prize 
+- **Competition Link:** <a href="https://en.mcm.edu.cn/">CUMCM Official Website</a>
+- **Our Solution:** <a href="../files/works/CUMCM-2023-Solution.pdf"> Project Essay</a>
+- **Award Certificate:**<a href="../files/certificates/others/CUMCM_TD_Certificate.pdf"> View Certificate</a> 
 
-.
 
+## Nankai Univeristy - Undergraduate Mathematical Contest in Modeling 
+
+- **Date:** November, 2023 
+- **Achievement:** Silver Award (Second Prize) 
+- **Our Solution:** <a href="../files/works/NKU-2023-Solution.pdf"> Project Essay</a>
+- **Award Certificate:**<a href="../files/certificates/others/NKU_Silver_Certificate.pdf"> View Certificate</a> 
+  
 <!-- Commented out sections -->
 <!-- {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>

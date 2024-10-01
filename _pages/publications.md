@@ -23,7 +23,7 @@ author_profile: true
 Network via Structural Information Fusion</h2>
     <p>Xiaoyang Ji, <strong>Yuchen Zhou</strong>, Haofu Yang, Shiyue Xu, Jiahao Li</p>
     <p><a href="http://2024.cscwd.org/">CSCWD 2024</a></p>
-    <p>[<a href="https://ieeexplore.ieee.org/abstract/document/10580852">IEEE</a>] [<a href="https://arxiv.org/abs/2408.04339">Arixiv</a>] [<a href="../files/Self-Supervised Contrastive Graph Clustering.pdf">Paper</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
+    <p>[<a href="https://ieeexplore.ieee.org/abstract/document/10580852">IEEE</a>] [<a href="https://arxiv.org/abs/2408.04339">Arixiv</a>] [<a href="../files/pubs/Self-Supervised Contrastive Graph Clustering.pdf">Paper</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
   </div>
 </div>
 

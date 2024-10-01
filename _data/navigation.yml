@@ -10,5 +10,6 @@ main:
     url: /awards/
   - title: "Competitions"
     url: /competitions/
-
+  - title: "Proficiencies"
+    url: /proficiencies/
 
