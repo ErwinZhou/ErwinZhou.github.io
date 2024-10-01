@@ -5,13 +5,9 @@ permalink: /proficiencies/
 author_profile: true
 ---
 
-## Langauge Proficiencies
-
-### Mandarin 
-#### Native Speaker
+## Mandarin (Native Speaker)
   
-### English 
-#### Second Language
+## English (Second Language)
 1. **TOFEL**: 
    * **Official Website**: [TOFEL](https://www.ets.org/toefl)
    * **Record Score** (Internet Based): 
