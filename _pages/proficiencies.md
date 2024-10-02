@@ -8,8 +8,8 @@ author_profile: true
 ## Mandarin (Native Speaker)
   
 ## English (Second Language)
-1. **TOFEL**: 
-   * **Official Website**: [TOFEL](https://www.ets.org/toefl)
+1. **TOEFL**: 
+   * **Official Website**: [TOEFL](https://www.ets.org/toefl)
    * **Record Score** (Internet Based): 
      * 1st:  102 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification-2023 10 14.pdf">Certificate</a> &emsp; 📌 2023.10.14
      * 2nd: 103 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification-2024 4 27.pdf">Certificate</a> &emsp; 📌 2024.4.27
@@ -17,7 +17,7 @@ author_profile: true
      * 4th: 103 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification- 2024.9.1pdf.pdf">Certificate</a> &emsp; 📌 2024.9.1
      * 5th: 102 &emsp; 📜 Certificate &emsp; 📌 2024.9.21
     <!-- <img align="center" width="794" height="200" src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/proficiencies/language/TOEFL/Sections-7 21.png"/> -->
-   * **MyBest® Scores 108**
+   * **MyBest™ Scores 108**
      * Section Scores:
        * Reading: 29
        * Listening: 29
