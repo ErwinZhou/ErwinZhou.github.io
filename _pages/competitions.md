@@ -9,17 +9,17 @@ author_profile: true
 
 - **Division:** Tianjin, China
 - **Date:** November 12, 2023 
-- **Achievement:** Second Prize 
+- **Achievement:** Second Prize (Top 20%)
 - **Competition Link:** <a href="https://en.mcm.edu.cn/">CUMCM Official Website</a>
-- **Our Solution:** <a href="../files/works/CUMCM-2023-Solution.pdf"> Project Essay</a>
+- **Our Solution:** <a href="../files/works/CUMCM-2023-Solution.pdf"> Project Solution</a>
 - **Award Certificate:**<a href="../files/certificates/others/CUMCM_TD_Certificate.pdf"> View Certificate</a> 
 
 
 ## Nankai Univeristy - Undergraduate Mathematical Contest in Modeling 
 
 - **Date:** November, 2023 
-- **Achievement:** Silver Award (Second Prize) 
-- **Our Solution:** <a href="../files/works/NKU-2023-Solution.pdf"> Project Essay</a>
+- **Achievement:** Silver Award (Top 1.5%)
+- **Our Solution:** <a href="../files/works/NKU-2023-Solution.pdf"> Project Solution</a>
 - **Award Certificate:**<a href="../files/certificates/others/NKU_Silver_Certificate.pdf"> View Certificate</a> 
   
 <!-- Commented out sections -->
