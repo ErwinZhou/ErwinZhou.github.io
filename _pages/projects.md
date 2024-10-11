@@ -22,7 +22,7 @@ author_profile: true
     <h2 style="margin-top: 0;">MIT: A intuitive tutor for mathematics reasoning</h2>
     <p><strong>Yuchen Zhou, </strong> Jialiang Xie, Lifeng Hua, Yinhui Liu, Xiwen Huang, Linfeng Fan, Caoyang Zhang</p>
     <p><a href="https://www.blendedlearn.org">Blended Learning</a> • <a href="https://www.blendedlearn.org/pbl/deep-learning-for-computer-vision---microsoft-project">Computer vision – Microsoft Project</a></p>
-    <p>[<a href="../files/works/Blended Learning_Research Poster.pdf">Poster</a>] [<a href="https://github.com/ErwinZhou/Mathematics-Intuitive-Tutor">Code</a>]</p>
+    <p>[<a href="../files/works/BlendedLearning_ResearchPoster.pdf">Poster</a>] [<a href="https://github.com/ErwinZhou/Mathematics-Intuitive-Tutor">Code</a>]</p>
   </div>
 </div>
 
