@@ -32,10 +32,10 @@ author_profile: true
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2022/demo-1.png" alt="PLDatabse" style="width: 100%;height=120%;">
   </div>
   <div style="flex: 2;">
-    <h2 style="margin-top: 0;">Database System 2022: An Intelligent DBMS for Premier League</h2>
+    <h2 style="margin-top: 0;">Database System 2023: An Intelligent DBMS for Premier League</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
-    <p>[<a href="../files/works/PLDatabase.pdf">Report</a>] [<a href="https://github.com/ErwinZhou/DatabaseSystem2022">Code</a>]</p>
+    <p>[<a href="../files/works/PLDatabase.pdf">Report</a>] [<a href="https://github.com/ErwinZhou/DatabaseSystem2023">Code</a>]</p>
   </div>
 </div>
 
