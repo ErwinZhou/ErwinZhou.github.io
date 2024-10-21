@@ -15,7 +15,7 @@ author_profile: true
 
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Blended Learning/research_poster.png" alt="Research Poster" style="width: 100%; height: 100%; object-fit: contain">
   </div>
   <div style="flex-grow: 1;">
@@ -30,7 +30,7 @@ author_profile: true
 
  
 <div style="display: flex; align-items: stretch; margin-bottom: 30px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2023/demo-1.png" alt="PLDatabse" style="width: 100%; height: 88%;">
   </div>
   <div style="flex-grow: 1;">
@@ -44,7 +44,7 @@ author_profile: true
 </div>
 
 <div style="display: flex; align-items: stretch; margin-bottom: 45px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height: 93%;">
   </div>
   <div style="flex-grow: 1;">
@@ -58,7 +58,7 @@ author_profile: true
 </div>
 
 <div style="display: flex; align-items: strectch; margin-bottom: 55px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/Internet_database_development_2023/1.jpg" alt="CsIt" style="width: 100%; height: 92%;">
   </div>
   <div style="flex-grow: 1;">
@@ -72,7 +72,7 @@ author_profile: true
 </div>
 
 <div style="display: flex; align-items: stretch; margin-bottom: 45px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/software_engineering_2024/admin.png" alt="CsIt" style="width: 100%;height: 94%;">
   </div>
   <div style="flex-grow: 1;">
@@ -86,7 +86,7 @@ author_profile: true
 </div>
 
 <div style="display: flex; align-items: stretch; margin-bottom: 0px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/high_level_language_program_design_2-2_2022/2.png" alt="CsIt" style="width: 100%;height: 75%;">
   </div>
   <div style="flex-grow: 1;">
@@ -100,7 +100,7 @@ author_profile: true
 </div>
 
 <div style="display: flex; align-items: stretch; margin-bottom: 20px;">
-  <div style="flex: 1; max-width: 430px; margin-right: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/Java_language_and_its_applicaiton_2023/gobang_final.png" alt="CsIt" style="width: 100%;height: 80%;">
   </div>
   <div style="flex-grow: 1;">
