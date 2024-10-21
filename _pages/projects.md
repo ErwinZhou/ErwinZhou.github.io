@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">For more projects of mine, you can visit my <a href="{https://github.com/ErwinZhou?tab=repositories}">Github repositories</a>.</a>.</div>
+  <div class="wordwrap">For more projects of mine, you can visit my <a href="{https://github.com/ErwinZhou?tab=repositories}">Github repositories</a>.</div>
 {% endif %}
 
 ---
@@ -14,11 +14,11 @@ author_profile: true
 <!-- ## Projects -->
 
 
-<div style="display: flex; align-items: strectch; margin-bottom: 45px;">
+<div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Blended Learning/research_poster.png" alt="Research Poster" style="width: 100%; height: 93%;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Blended Learning/research_poster.png" alt="Research Poster" style="width: 100%; height: 100%; object-fit: contain">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">MIT: A intuitive tutor for mathematics reasoning</h2>
     <p><strong>Yuchen Zhou, </strong> Jialiang Xie, Lifeng Hua, Yinhui Liu, Xiwen Huang, Linfeng Fan, Caoyang Zhang</p>
     <p><a href="https://www.blendedlearn.org">Blended Learning</a> • <a href="https://www.blendedlearn.org/pbl/deep-learning-for-computer-vision---microsoft-project">Deep Learning for Computer vision – Microsoft Project</a></p>
@@ -33,7 +33,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2023/demo-1.png" alt="PLDatabse" style="width: 100%; height: 88%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Database System 2023: An Intelligent DBMS for Premier League</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
@@ -47,7 +47,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height: 93%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Spatio-temporal analysis of big data population migration patterns</h2>
     <p><strong>Yuchen Zhou</strong>, Xiaoyang Ji, Haofu Yang, Qipeng Wang</p>
     <p>Big Data Department • <a href="https://www.chinasofti.com/en/">Chinasoft International</a></p>
@@ -61,7 +61,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/Internet_database_development_2023/1.jpg" alt="CsIt" style="width: 100%; height: 92%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Internet Database Development 2023: NukeClear Vision</h2>
     <p><strong>Yuchen Zhou</strong>, Xiaoyang Ji, Tongxi Wu, Yafei Hu</p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
@@ -75,7 +75,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/software_engineering_2024/admin.png" alt="CsIt" style="width: 100%;height: 94%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Software Engineering 2024: Smart Fishery Monitoring System</h2>
     <p><strong>Yuchen Zhou</strong>, Mingjie Qi, Haofu Yang, Wenfei Xie, Jing Wu</p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
@@ -89,7 +89,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/high_level_language_program_design_2-2_2022/2.png" alt="CsIt" style="width: 100%;height: 75%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">High Level Language Program Design 2-2 2022: Gold Miner</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
@@ -103,7 +103,7 @@ author_profile: true
   <div style="flex: 1; max-width: 430px; margin-right: 20px;">
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/Java_language_and_its_applicaiton_2023/gobang_final.png" alt="CsIt" style="width: 100%;height: 80%;">
   </div>
-  <div style="flex: 2;">
+  <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Java Language And Its Applicaiton 2023: GoBang Final</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
