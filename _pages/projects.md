@@ -31,7 +31,7 @@ author_profile: true
  
 <div style="display: flex; align-items: stretch; margin-bottom: 30px;">
   <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2023/demo-1.png" alt="PLDatabse" style="width: 100%; height: 88%;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/NKU/database_system_2023/demo-1.png" alt="PLDatabse" style="width: 100%; height: 83%;">
   </div>
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Database System 2023: An Intelligent DBMS for Premier League</h2>
@@ -45,7 +45,7 @@ author_profile: true
 
 <div style="display: flex; align-items: stretch; margin-bottom: 45px;">
   <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height: 93%;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Chinasoft International/DEMO.png" alt="CsIt" style="width: 100%;height: 85%;">
   </div>
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Spatio-temporal analysis of big data population migration patterns</h2>
@@ -53,7 +53,7 @@ author_profile: true
     <p>Big Data Department • <a href="https://www.chinasofti.com/en/">Chinasoft International</a></p>
     <p><strong>Overview:</strong> This project was during my internship in Chinasoft International. It aims to provide a comprehensive data distributed storage, analytics, and visualization of migration patterns (four million records) in China. </p>
     <p><strong>Keywords:</strong> Big Data, Hadoop, Hive, SQL, Spring Boot, ECharts, Migration Patterns</p>
-    <p><strong>Outcomes:</strong> [<a href="../files/slides/BigData.pptx">Slides</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
+    <p><strong>Outcomes:</strong> [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Demo</a>] [<a href="../files/slides/BigData.pptx">Slides</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
   </div>
 </div>
 
