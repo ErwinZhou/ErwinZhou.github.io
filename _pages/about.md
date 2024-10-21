@@ -72,12 +72,12 @@ My research interests include the following areas:
 
 My Dual Persona... 🎇
 ------
-After all, this is an academic page about myself. Want to know more about me? Check out my [personal blog](https://erwinzhou.space/).
+After all, this is an academic page about myself. Want to know more about me? Check out my [personal blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg).
 I bet you will find something interesting there. 😄
 
 
 Contact me 📧
 ------
-[Email](mailto:erwinzhou10@gmail.com) / [GitHub](https://github.com/ErwinZhou) / [Wechat](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/social_media/WeChat.jpg) / [Blog](https://erwinzhou.space/)
+[Email](mailto:erwinzhou10@gmail.com) / [GitHub](https://github.com/ErwinZhou) / [Wechat](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/social_media/WeChat.jpg) / [Blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg)
 
 

@@ -12,7 +12,7 @@ author_profile: true
 - **Achievement:** Second Prize (Top 20%)
 - **Competition Link:** <a href="https://en.mcm.edu.cn/">CUMCM Official Website</a>
 - **Our Solution:** <a href="../files/works/CUMCM-2023-Solution.pdf"> Project Solution</a>
-- **Award Certificate:**<a href="../files/certificates/others/CUMCM_TD_Certificate.pdf"> View Certificate</a> 
+- **Award Certificate:**<a href="../files/certificates/others/CUMCM_TD_Certificate-CNEN.pdf"> View Certificate</a> 
 
 
 ## Nankai Univeristy - Undergraduate Mathematical Contest in Modeling 
@@ -20,7 +20,7 @@ author_profile: true
 - **Date:** November, 2023 
 - **Achievement:** Silver Award (Top 1.5%)
 - **Our Solution:** <a href="../files/works/NKU-2023-Solution.pdf"> Project Solution</a>
-- **Award Certificate:**<a href="../files/certificates/others/NKU_Silver_Certificate.pdf"> View Certificate</a> 
+- **Award Certificate:**<a href="../files/certificates/others/NKU-Certificate-CNEN.pdf"> View Certificate</a> 
   
 <!-- Commented out sections -->
 <!-- {% if site.author.googlescholar %}
