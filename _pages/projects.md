@@ -16,7 +16,7 @@ author_profile: true
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
   <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
-    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Blended Learning/research_poster.png" alt="Research Poster" style="width: 100%; height: 100%; object-fit: contain">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/Blended Learning/concrete_1.png" alt="Research Poster" style="width: 100%; height: 100%; object-fit: contain">
   </div>
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">MIT: A intuitive tutor for mathematics reasoning</h2>
@@ -79,7 +79,7 @@ author_profile: true
     <h2 style="margin-top: 0;">Software Engineering 2024: Smart Fishery Monitoring System</h2>
     <p><strong>Yuchen Zhou</strong>, Mingjie Qi, Haofu Yang, Wenfei Xie, Jing Wu</p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
-    <p><strong>Overview:</strong> The final project of this course is developing a smart fishery monitoring system to help help fishery managers monitor the fishery resources and equipments in real-time, analyze the fishery data, and provide suggestions for fishery management. It also includes intelligent functions like chatbot interaction, and object recognition.</p>
+    <p><strong>Overview:</strong> The final project of this course is developing a smart fishery monitoring system to help help famers monitor the fishery resources and equipments in real-time and analyze the fishery data. It also includes intelligent functions like object recognition and chatbot.</p>
     <p><strong>Keywords:</strong> Software Engineering, Web Development, Python, FastAPI, YOLO, SQL, HTML&CSS</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/d5d01bc5-6dc2-4440-a731-1ce978485c69">Demo</a>] [<a href="../files/works/SoftwareEngineering_Final_Project.pdf">Report</a>]  [<a href="https://github.com/Starlight0798/Software-Engineering-frontend">Code1</a>] [<a href="https://github.com/Starlight0798/Software-Engineering-backend">Code2</a>]</p>
   </div>
