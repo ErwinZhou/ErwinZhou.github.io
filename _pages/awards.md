@@ -13,8 +13,8 @@ author_profile: true
    - **Date:** November, 2024
    - **Winning Rate:** Top 5%
    - **Prize:** 2,000 RMB
-   - **Award Certificate:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Certificate</a>
-   - **Award Proof:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Proof</a>
+   - **Award Diploma:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Diploma</a>
+   - **Award Certificate:** <a href="../files/certificates/scholarships/2023-2024-CN.pdf">CN</a> / <a href="../files/certificates/scholarships/2023-2024-EN.pdf">EN</a>
 
 
 ### 2022-2023 Academic Year
@@ -24,8 +24,8 @@ author_profile: true
    - **Date:** November, 2023
    - **Winning Rate:** Top 5%
    - **Prize:** 2,000 RMB
-   - **Award Certificate:** <a href="../files/certificates/scholarships/2022_2023_Certificate.pdf"> View Certificate</a>
-   - **Award Proof:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Proof</a>
+   - **Award Diploma:** <a href="../files/certificates/scholarships/2022_2023_Diploma.pdf"> View Diploma</a>
+   - **Award Certificate:** <a href="../files/certificates/scholarships/2022-2023-CN.pdf">CN</a> / <a href="../files/certificates/scholarships/2022-2023-EN.pdf">EN</a>
 
 ## Others
 
