@@ -121,9 +121,9 @@ author_profile: true
     <h2 style="margin-top: 0;">Big Data Visualization Fundamentals 2024: My Love for Football</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
-    <p><strong>Overview:</strong> The final project of this course is developing .</p>
+    <p><strong>Overview:</strong> The final project of this course is developing a comprehensive visualization on any topics using Python and available tools. I utlized Flourish and Python to visualize 3 million football-related records from Kaggle, including diverse interactive and dynamic maps.</p>
     <p><strong>Keywords:</strong> Flourish, Kaggle, Data Visualization, Football</p>
-    <p><strong>Outcomes:</strong> [<a href="https://public.flourish.studio/story/2407519/">Demo</a>] [<a href="Presentation">Presentation</a>] [<a href="../files/slides/Visualization.pptx">Slides</a>] [<a href="https://github.com/ErwinZhou/BigData">Code</a>] </p>
+    <p><strong>Outcomes:</strong> [<a href="https://public.flourish.studio/story/2407519/">Demo</a>] [<a href="https://github.com/user-attachments/assets/411b163f-f3eb-41d7-92c5-e5effc54d1d2">Presentation</a>] [<a href="../files/slides/Visualization.pptx">Slides</a>] [<a href="https://github.com/ErwinZhou/BigData">Code</a>] </p>
   </div>
 </div>
 
