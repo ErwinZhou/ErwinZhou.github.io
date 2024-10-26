@@ -113,6 +113,20 @@ author_profile: true
   </div>
 </div>
 
+<div style="display: flex; align-items: stretch; margin-bottom: 20px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
+    <img src="https://github.com/user-attachments/assets/a4d525af-7272-41fb-ad5b-ce108269f0eb" alt="CsIt" style="width: 100%;height: 80%;">
+  </div>
+  <div style="flex-grow: 1;">
+    <h2 style="margin-top: 0;">Big Data Visualization Fundamentals 2024: My Love for Football</h2>
+    <p><strong>Yuchen Zhou</strong></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><strong>Overview:</strong> The final project of this course is developing .</p>
+    <p><strong>Keywords:</strong> Flourish, Kaggle, Data Visualization, Football</p>
+    <p><strong>Outcomes:</strong> [<a href="https://public.flourish.studio/story/2407519/">Demo</a>] [<a href="Presentation">Presentation</a>] [<a href="../files/slides/Visualization.pptx">Slides</a>] [<a href="https://github.com/ErwinZhou/BigData">Code</a>] </p>
+  </div>
+</div>
+
 **To be continue ...**
   
 
