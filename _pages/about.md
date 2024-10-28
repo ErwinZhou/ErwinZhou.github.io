@@ -34,6 +34,7 @@ Education 🎓
 - **B.E. in Information Security** &emsp; 📌 2021-9-1 — Present
   - [College of Cyber Security](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
   - Advisor: 
+  - Capstone Project: 
 
 
 Experience 💼
