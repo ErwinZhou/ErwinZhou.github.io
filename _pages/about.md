@@ -14,7 +14,7 @@ About me 👨‍💻
 Hi, there 👋
 I'm Yuchen Zhou, an undergraduate student in Information Security at [College of Cyber Security](https://encyber.nankai.edu.cn/), [Nankai University](https://en.nankai.edu.cn/) in Tianjin, China. 
 
-I previously had internship experience in many job posisitions 💼, including [Chinasoft International](https://www.chinasofti.com/en/) and [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/). I'm currently a research intern at [Beijing Information Science and Technology National Research Center (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), under the supervision of [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao). I am enthusiastic about designing and building advanced intelligence systems, which are practical enough to shape the world in a better way. My research interests include multimodal, LLM, federated learning, AI4Sci, etc.
+I previously had internship experience in many job posisitions 💼, including [Chinasoft International](https://www.chinasofti.com/en/) and [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/). I'm currently a research intern at [Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), under the supervision of [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao). I am enthusiastic about designing and building advanced intelligence systems, which are practical enough to shape the world in a better way. My research interests include multimodal, LLM, federated learning, AI4Sci, etc.
 
 I am eager to seek a stage with more possibilities to grow, to learn, and to contribute. And more importantly, a place where I can experience the diversity of people, culture, and ideas. **I just love hearing about different lives and different perspectives! Wild and free of the cage. 👐** That's why I am pursuing a master degree of Computer Science in top universities worldwide. **I wholeheartedly believe that this is the right track and life experience that I have been looking for the all the time.**
 
@@ -40,7 +40,7 @@ Experience 💼
 ------
 <img align="right" width="88" src="../images/TsingHua.png" />
 
-- **[Beijing Information Science and Technology National Research Center (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024-8-17 — Present
+- **[Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024-8-17 — Present
   - Position: **Research Intern**
   - Advisor: [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao)
   - Focus: Multimodal, LLM, federated learning, etc.
@@ -66,7 +66,7 @@ My research interests include the following areas:
 
 * **Multimodal**
 * **Large Language Models (LLM)**
-* **Federated Learning(FL)**
+* **Federated Learning (FL)**
 * **AI4Sci**
 * **Explainable Artificial Intelligence, XAI**
 
