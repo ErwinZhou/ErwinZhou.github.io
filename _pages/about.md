@@ -12,7 +12,7 @@ redirect_from:
 About me 👨‍💻
 ======
 Hi, there 👋
-I'm Yuchen Zhou, an undergraduate student in Information Security at [College of Cyber Security](https://encyber.nankai.edu.cn/), [Nankai University](https://en.nankai.edu.cn/) in Tianjin, China. 
+I'm Yuchen Zhou, an undergraduate student in Information Security at [College of Cyber Science](https://encyber.nankai.edu.cn/), [Nankai University](https://en.nankai.edu.cn/) in Tianjin, China. 
 
 I previously had internship experience in many job posisitions 💼, including [Chinasoft International](https://www.chinasofti.com/en/) and [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/). I'm currently a research intern at [Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), under the supervision of [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao). I am enthusiastic about designing and building advanced intelligence systems, which are practical enough to shape the world in a better way. My research interests include multimodal, LLM, federated learning, AI4Sci, etc.
 
@@ -32,7 +32,7 @@ Education 🎓
 <img align="right" width="88" src="../images/Nankai.png" />
 
 - **B.E. in Information Security** &emsp; 📌 2021-9-1 — Present
-  - [College of Cyber Security](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
+  - [College of Cyber Science](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
   - Advisor: 
   - Capstone Project: 
 
