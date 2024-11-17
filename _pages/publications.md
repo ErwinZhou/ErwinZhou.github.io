@@ -4,12 +4,9 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-
 {% if site.author.googlescholar %}
-  <div class="wordwrap">For more articles of mine, you can visit my <a href="{https://scholar.google.co.uk/citations?hl=en&user=5CjPPhYAAAAJ}">Google Scholar</a> or <a href="{https://www.researchgate.net/profile/Yuchen-Zhou-28}"> ResearchGate profile</a>.</div>
+  <div class="wordwrap">For more articles of mine, you can visit my <a href="https://scholar.google.co.uk/citations?hl=en&user=5CjPPhYAAAAJ">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yuchen-Zhou-28">ResearchGate profile</a>.</div>
 {% endif %}
-
----
 
 <!-- ## Publications -->
 
