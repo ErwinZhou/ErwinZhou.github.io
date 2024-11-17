@@ -32,6 +32,6 @@ author_profile: true
 
 ## Ethics
 ### Professional Ethics
-1. **Indiana University Plagiarism Education Program**
+1. **Indiana University "How to Recognize Plagiarism: Tutorials and Tests" Program**
    * **Official Website**: [Indiana University Plagiarism Tutorials and Tests](https://plagiarism.iu.edu/)
    * **Certificate**: 📜 <a href="../files/certificates/proficiencies/Ethics/Indiana University Confirmation Certificate on Recognizing Plagiarism for Yuchen Zhou.pdf">Advanced Level for Master's and Doctoral Students</a> &emsp; 📌 2024.3.1
