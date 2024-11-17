@@ -29,3 +29,9 @@ author_profile: true
    * **General Test Scores** (Internet Based): 
      * **1st: 323 (3.5)** &emsp; 📜 <a href="../files/certificates/proficiencies/GRE/GRE Score Report-2024.3.24.pdf">Certificate</a> &emsp; 📌 2024.3.24 
     <!-- <img align="center" width="500" height="325" src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/proficiencies/language/GRE/Sections-3-24.png" /> -->
+
+## Ethics
+### Professional Ethics
+1. **Indiana University Plagiarism Education Program**
+   * **Official Website**: [Indiana University Plagiarism Tutorials and Tests](https://plagiarism.iu.edu/)
+   * **Certificate**: 📜 <a href="../files/certificates/proficiencies/Ethics/Indiana University Confirmation Certificate on Recognizing Plagiarism for Yuchen Zhou.pdf">Advanced Level for Master's and Doctoral Students</a> &emsp; 📌 2024.3.1
