@@ -9,10 +9,10 @@ author_profile: true
 ### 2023-2024 Academic Year
 <img align="right" width="88" src="../images/Nankai.png" />
 
-   - **Scholarship:** Nankai University College of Cyber Security Academic Excellence Scholarship, 2023-2024 
+   - **Scholarship:** Nankai University Gongneng Scholarship, 2023-2024 
    - **Date:** November, 2024
-   - **Winning Rate:** Top 5%
-   - **Prize:** 2,000 RMB
+   - **Winning Rate:** Top 3%
+   - **Prize:** 5,000 RMB
    - **Award Diploma:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Diploma</a>
    - **Award Certificate:** <a href="../files/certificates/scholarships/2023-2024-CN.pdf">CN</a> / <a href="../files/certificates/scholarships/2023-2024-EN.pdf">EN</a>
 
@@ -20,7 +20,7 @@ author_profile: true
 ### 2022-2023 Academic Year
 <img align="right" width="88" src="../images/Nankai.png" />
 
-   - **Scholarship:** Nankai University College of Cyber Security Academic Excellence Scholarship, 2022-2023
+   - **Scholarship:** Nankai University Academic Excellence Scholarship, 2022-2023
    - **Date:** November, 2023
    - **Winning Rate:** Top 5%
    - **Prize:** 2,000 RMB
