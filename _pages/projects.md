@@ -24,7 +24,7 @@ author_profile: true
     <p><a href="https://www.blendedlearn.org">Blended Learning</a> • <a href="https://www.blendedlearn.org/pbl/deep-learning-for-computer-vision---microsoft-project">Deep Learning for Computer vision – Microsoft Project</a></p>
     <p><strong>Overview:</strong> This project is aimed at provding transparent illustrations in both concrete and abstract examples of mathematical and scientific concept for research purposes or spreading knowledge. <strong>It is still updating...</strong></p>
     <p><strong>Keywords:</strong> AI4Sci, Python, Multimodal, LLM, Diffusion, RLHF</p>
-    <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/c52ab615-f3dc-4728-8b3e-635361346687">Demo1</a>] [<a href="https://github.com/user-attachments/assets/2c77eeeb-a548-47d7-a67e-15190652ab57">Demo2</a>] [<a href="../files/works/BlendedLearning_ResearchPoster.pdf">Poster</a>] [<a href="https://github.com/ErwinZhou/Mathematics-Intuitive-Tutor">Code</a>]</p>
+    <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/c52ab615-f3dc-4728-8b3e-635361346687">Demo1</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Demo2</a>] [<a href="../files/works/BlendedLearning_ResearchPoster.pdf">Poster</a>] [<a href="https://github.com/ErwinZhou/Mathematics-Intuitive-Tutor">Code</a>]</p>
   </div>
 </div>
 
