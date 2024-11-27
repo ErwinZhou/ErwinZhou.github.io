@@ -36,7 +36,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Database System 2023: An Intelligent DBMS for Premier League</h2>
     <p><strong>Yuchen Zhou</strong></p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is an intelligent DBMS for Premier League. It includes three simulational modes for coaches, club managers, and FA additional intelligent functions. <strong>It is still updating...</strong></p>
     <p><strong>Keywords:</strong> DBMS, JAVA, MySQL, JDBC, Machine Learning, Intelligent System</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/02112d38-f0ef-40c1-8d80-2fd037c5d551" title="https">Demo</a>] [<a href="../files/works/PLDatabase.pdf">Report</a>] [<a href="https://github.com/ErwinZhou/DatabaseSystem2023">Code</a>]</p>
@@ -64,7 +64,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Internet Database Development 2023: NukeClear Vision</h2>
     <p><strong>Yuchen Zhou</strong>, Xiaoyang Ji, Tongxi Wu, Yafei Hu</p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is developing a website aimed at raising awareness about the dangers of nuclear pollution. The goal is to educate the public on the severity of nuclear pollution and promote actions to reduce its impact.</p>
     <p><strong>Keywords:</strong> Web Development, Yii2, HTML&CSS, SQL</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/4a0b9b23-77d3-475d-8dad-89f9ed99819f">Demo</a>] [<a href="https://github.com/NKU-Data-Titans/NKU-InternetDatabaseDevelopment2023/tree/main/yii2/data/team">Report</a>] [<a href="https://github.com/NKU-Data-Titans/NKU-InternetDatabaseDevelopment2023">Code</a>]</p>
@@ -78,7 +78,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Software Engineering 2024: Smart Fishery Monitoring System</h2>
     <p><strong>Yuchen Zhou</strong>, Mingjie Qi, Haofu Yang, Wenfei Xie, Jing Wu</p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is developing a smart fishery monitoring system to help help famers monitor the fishery resources and equipments in real-time and analyze the fishery data. It also includes intelligent functions like object recognition and chatbot.</p>
     <p><strong>Keywords:</strong> Software Engineering, Web Development, Python, FastAPI, YOLO, SQL, HTML&CSS</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/d5d01bc5-6dc2-4440-a731-1ce978485c69">Demo</a>] [<a href="../files/works/SoftwareEngineering_Final_Project.pdf">Report</a>]  [<a href="https://github.com/Starlight0798/Software-Engineering-frontend">Code1</a>] [<a href="https://github.com/Starlight0798/Software-Engineering-backend">Code2</a>]</p>
@@ -92,7 +92,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">High Level Language Program Design 2-2 2022: Gold Miner</h2>
     <p><strong>Yuchen Zhou</strong></p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is developing a classic game called Gold Miner. The game includes various levels of difficulty, different types of gold and stones, and special items to help players.</p>
     <p><strong>Keywords:</strong> Game Design, Gold Miner, C++, QT, GUI</p>
     <p><strong>Outcomes:</strong> [<a href="https://www.bilibili.com/video/BV1Su411z7pg/?vd_source=f02798ad3afc7c4576a2e35a9d3ba39e#reply511475869">Demo</a>] [<a href="https://gitee.com/zyc13212168838/A123">Code</a>]</p>
@@ -106,7 +106,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Java Language And Its Applicaiton 2023: GoBang Final</h2>
     <p><strong>Yuchen Zhou</strong></p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is developing and extending a Gobang game. The game includes various modes of play, such as PVP and PVE. It also includes a Chatroom for players to communicate with each other and different sound effects.</p>
     <p><strong>Keywords:</strong> Game Design, Gobang, JAVA, MVC, GUI</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/d0c399bd-1d1c-45aa-beb6-2cad3b3b40d7">Demo</a>] [<a href="../files/works/JAVA.pdf">Report</a>] [<a href="https://github.com/ErwinZhou/JavaLanguageAndItsApplication2023">Code</a>]</p>
@@ -120,7 +120,7 @@ author_profile: true
   <div style="flex-grow: 1;">
     <h2 style="margin-top: 0;">Big Data Visualization Fundamentals 2024: My Love for Football</h2>
     <p><strong>Yuchen Zhou</strong></p>
-    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Security</a></p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
     <p><strong>Overview:</strong> The final project of this course is developing a comprehensive visualization on any topics using Python and available tools. I utlized Flourish and Python to visualize 3 million football-related records from Kaggle, including diverse interactive and dynamic maps.</p>
     <p><strong>Keywords:</strong> Flourish, Kaggle, Data Visualization, Football</p>
     <p><strong>Outcomes:</strong> [<a href="https://public.flourish.studio/story/2407519/">Demo</a>] [<a href="https://github.com/user-attachments/assets/411b163f-f3eb-41d7-92c5-e5effc54d1d2">Presentation</a>] [<a href="../files/slides/Visualization.pptx">Slides</a>] [<a href="https://github.com/ErwinZhou/BigData">Code</a>] </p>
