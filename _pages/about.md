@@ -31,7 +31,7 @@ Education 🎓
 ------  
 <img align="right" width="88" src="../images/Nankai.png" />
 
-- **B.E. in Information Security** &emsp; 📌 2021-9-1 — Present
+- **B.E. in Information Security** &emsp; 📌 2021.9.1 — Present
   - [College of Cyber Science](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
   - Advisor: 
   - Capstone Project: 
@@ -48,7 +48,7 @@ Experience 💼
 
 <img align="right" width="88" src="../images/Chinasoft.png" />
 
-- **Big Data Department • [Chinasoft International](https://www.chinasofti.com/en/)** &emsp; 📌 2023.6.26-2023.7.21
+- **Big Data Department • [Chinasoft International](https://www.chinasofti.com/en/)** &emsp; 📌 2023.6.26 — 2023.7.21
   - Position: **Data Analyst Intern**
   - Advisor: Zhenglin Hu
   - Responsibilities: Analysis of pandemic-related population migration data (4 million records), focusing on data processing and storage using Hive and HDFS. Assisted in the integration of Sqoop, Kafka, and Zookeeper to optimize data flow and ensure secure, efficient handling.
