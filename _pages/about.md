@@ -41,21 +41,21 @@ Experience 💼
 ------
 <img align="right" width="88" src="../images/TsingHua.png" />
 
-- **[Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024-8-17 — Present
-  - Position: **Research Intern**
+- **[Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024.7.17 — Present
+  - Position: **Research Assistant**
   - Advisor: [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao)
   - Focus: Multimodal, LLM, federated learning, etc.
 
 <img align="right" width="88" src="../images/Chinasoft.png" />
 
-- **Big Data Department • [Chinasoft International](https://www.chinasofti.com/en/)** &emsp; 📌 2023.7.1-2023.8.31
+- **Big Data Department • [Chinasoft International](https://www.chinasofti.com/en/)** &emsp; 📌 2023.6.26-2023.7.21
   - Position: **Data Analyst Intern**
   - Advisor: Zhenglin Hu
   - Responsibilities: Analysis of pandemic-related population migration data (4 million records), focusing on data processing and storage using Hive and HDFS. Assisted in the integration of Sqoop, Kafka, and Zookeeper to optimize data flow and ensure secure, efficient handling.
 
 <img align="right" width="88" src="../images/LongShine.png" />
 
-- **Marketing Business Department • [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/)** &emsp; 📌 2023-3-1 — 2023.5.1
+- **Marketing Business Department • [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/)** &emsp; 📌 2023.3.1 — 2023.5.1
   - Position: **Assistant of Operations and Maintenance Engineer**
   - Advisor: Haiyan Wan
   - Responsibilities: Automated daily system maintenance tasks using Shell and Python scripts, improving system response times and transaction processing capabilities. Optimized deployment processes by implementing CI/CD practices with Jenkins, Docker, and Kubernetes (K8S), enhancing overall system performance and reliability.
