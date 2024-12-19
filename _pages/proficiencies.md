@@ -15,7 +15,7 @@ author_profile: true
      * 2nd: 103 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification-2024 4 27.pdf">Certificate</a> &emsp; 📌 2024.4.27
      * **3rd: 104** &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification- 2024 7 21.pdf">Certificate</a> &emsp; 📌 2024.7.21
      * 4th: 103 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification- 2024 9 1.pdf">Certificate</a> &emsp; 📌 2024.9.1
-     * 5th: 102 &emsp; 📜 Certificate &emsp; 📌 2024.9.21
+     * 5th: 102 &emsp; 📜 <a href="../files/certificates/proficiencies/TOEFL/TOEFL Grade Certification-2024 9 21.pdf">Certificate</a> &emsp; 📌 2024.9.21
     <!-- <img align="center" width="794" height="200" src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/proficiencies/language/TOEFL/Sections-7 21.png"/> -->
    * **MyBest™ Scores 108**
      * Section Scores:

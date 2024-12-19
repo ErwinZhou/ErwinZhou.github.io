@@ -13,6 +13,20 @@ author_profile: true
 
 <!-- ## Projects -->
 
+<div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/FedMoLLM/FedMoLLM_stage1_overview.png" alt="FedMoLLM overview" style="width: 100%; height: 100%; object-fit: contain">
+  </div>
+  <div style="flex-grow: 1;">
+    <h2 style="margin-top: 0;">MIT: A intuitive tutor for mathematics reasoning</h2>
+    <p>Sicheng Zhao, <strong>Yuchen Zhou</strong></p>
+    <p><a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a> • <a href="https://www.sist.tsinghua.edu.cn/sisten/">School of Information Science and Technology</a> • <a href="https://www.bnrist.tsinghua.edu.cn/bnristen/">BNRist</a></p>
+    <p><strong>Overview:</strong> This research project is aimed at preposing a end-to-end federated pre-training framework, FedMoLLM, to address privacy issues while training a MM-LLM for cross-modality reasoning and mainly generation tasks. <strong>It is still updating...</strong></p>
+    <p><strong>Keywords:</strong> Research, Python, DeepSpeed, Multimodal, LLM, Privacy, Federated Learning, Meta Learning</p>
+    <p><strong>Outcomes:</strong> [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Demo</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Paper</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
+  </div>
+</div>
+
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
   <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
@@ -23,8 +37,22 @@ author_profile: true
     <p><strong>Yuchen Zhou, </strong> Jialiang Xie, Lifeng Hua, Yinhui Liu, Xiwen Huang, Linfeng Fan, Caoyang Zhang</p>
     <p><a href="https://www.blendedlearn.org">Blended Learning</a> • <a href="https://www.blendedlearn.org/pbl/deep-learning-for-computer-vision---microsoft-project">Deep Learning for Computer vision – Microsoft Project</a></p>
     <p><strong>Overview:</strong> This project is aimed at providing transparent illustrations in both concrete and abstract examples of mathematical and scientific concepts for research purposes or spreading knowledge. <strong>It is still updating...</strong></p>
-    <p><strong>Keywords:</strong> AI4Sci, Python, Multimodal, LLM, Diffusion, RLHF</p>
+    <p><strong>Keywords:</strong> Research, AI4Sci, Python, Multimodal, LLM, Diffusion, RLHF</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/c52ab615-f3dc-4728-8b3e-635361346687">Demo</a>] [<a href="../files/works/BlendedLearning_ResearchPoster.pdf">Poster</a>] [<a href="https://github.com/ErwinZhou/Mathematics-Intuitive-Tutor">Code</a>]</p>
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 45px;">
+  <div style="flex: 0 0 auto; max-width: 430px; margin-right: 20px;">
+    <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/MBDS/MBDS_overview.jpg" alt="MBDS Research Overview" style="width: 100%; height: 100%; object-fit: contain">
+  </div>
+  <div style="flex-grow: 1;">
+    <h2 style="margin-top: 0;">Defending Against Backdoor Attacks on Deep Neural Networks by Meta Backdoor Analysis</h2>
+    <p>Tongxi Wu, Yafei Hu, Xiaoyang Ji, <strong> Yuchen Zhou, </strong>Han Jiang</p>
+    <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
+    <p><strong>Overview:</strong> This research project is aimed at proposing a defense system, Meta Backdoor Defense System (MBDS), for detecting backdoor attacks in deep neural networks. Unlike traditional methods, MBDS does not rely on assumptions about the attacker’s strategies. Instead, it requires only black-box access to the target model.
+    <p><strong>Keywords:</strong> Research, Python, AI Security, Backdoor Defense, DNN</p>
+    <p><strong>Outcomes:</strong> [<a href="../files/works/MBDS-Paper.pdf">Paper</a>] [<a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">Code</a>]</p>
   </div>
 </div>
 

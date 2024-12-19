@@ -33,7 +33,7 @@ Education 🎓
 
 - **B.E. in Information Security** &emsp; 📌 2021.9.1 — Present
   - [College of Cyber Science](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
-  - Advisor: 
+  - Advisor: [Prof. Zheli Liu](https://scholar.google.co.uk/citations?user=PpBb6vUAAAAJ&hl=en&oi=ao)
   - Capstone Project: 
 
 
@@ -73,7 +73,7 @@ My research interests include the following areas:
 
 My Dual Persona... 🎇
 ------
-After all, this is an academic page about myself. Want to know more about me? Check out my [personal blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg).
+After all, this is an academic portfolio website about myself. Want to know more about me? Check out my [personal blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg).
 I bet you will find something interesting there. 😄
 
 
