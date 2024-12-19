@@ -18,7 +18,7 @@ author_profile: true
     <img src="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/works/projects/FedMoLLM/FedMoLLM_stage1_overview.png" alt="FedMoLLM overview" style="width: 100%; height: 100%; object-fit: contain">
   </div>
   <div style="flex-grow: 1;">
-    <h2 style="margin-top: 0;">MIT: A intuitive tutor for mathematics reasoning</h2>
+    <h2 style="margin-top: 0;">FedMoLLM: End-to-End Federated Learning for Cross-Modality Generation in MM-LLM</h2>
     <p>Sicheng Zhao, <strong>Yuchen Zhou</strong></p>
     <p><a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a> • <a href="https://www.sist.tsinghua.edu.cn/sisten/">School of Information Science and Technology</a> • <a href="https://www.bnrist.tsinghua.edu.cn/bnristen/">BNRist</a></p>
     <p><strong>Overview:</strong> This research project is aimed at preposing a end-to-end federated pre-training framework, FedMoLLM, to address privacy issues while training a MM-LLM for cross-modality reasoning and mainly generation tasks. <strong>It is still updating...</strong></p>
