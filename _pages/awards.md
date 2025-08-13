@@ -6,6 +6,17 @@ author_profile: true
 ---
 ## Scholarships
 
+### 2025-2026 Academic Year
+<img align="right" width="88" src="../images/Carnegie_Mellon_University_seal.png" />
+
+   - **Scholarship:** Carnegie Mellon University INI Fellowship, 2025-2026
+   - **Date:** April, 2025
+   - **Prize:** $4,000 USD
+   - **Award Diploma:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg"> View Diploma</a>
+   - **Award Certificate:** <a href="https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg">EN</a>
+
+
+
 ### 2023-2024 Academic Year
 <img align="right" width="88" src="../images/Nankai.png" />
 

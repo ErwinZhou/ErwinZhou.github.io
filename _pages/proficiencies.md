@@ -32,6 +32,11 @@ author_profile: true
 
 ## Ethics
 ### Professional Ethics
-1. **Indiana University "How to Recognize Plagiarism: Tutorials and Tests" Program**
+1. Physical Science Responsible Conduct of Research Course
+   * **Official Website**: [CITI Program](https://www.citiprogram.org/)
+   * **Issued**: Aug 2025
+   * **Credential ID**: 71382492
+   * **Certificate**: 📜 <a href="../files/certificates/proficiencies/Ethics/Physical Science Responsible Conduct of Research Course.pdf">Certificate</a> &emsp; 📌 2025.8.1
+2. **Indiana University "How to Recognize Plagiarism: Tutorials and Tests" Program**
    * **Official Website**: [Indiana University Plagiarism Tutorials and Tests](https://plagiarism.iu.edu/)
    * **Certificate**: 📜 <a href="../files/certificates/proficiencies/Ethics/Indiana University Confirmation Certificate on Recognizing Plagiarism for Yuchen Zhou.pdf">Advanced Level for Master's and Doctoral Students</a> &emsp; 📌 2024.3.1

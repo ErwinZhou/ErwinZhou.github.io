@@ -12,15 +12,17 @@ redirect_from:
 About me 👨‍💻
 ======
 Hi, there 👋
-I'm Yuchen Zhou, an undergraduate student in Information Security at [College of Cyber Science](https://encyber.nankai.edu.cn/), [Nankai University](https://en.nankai.edu.cn/) in Tianjin, China. 
+I'm Yuchen Zhou (Erwin Chow), an graduate student at [Information Networking Institute](https://www.cmu.edu/ini/), [College of Engineering](https://www.cmu.edu/engineering/), [Carnegie Mellon University](https://www.cmu.edu/) in Pittsburgh, Pennsylvania, USA. My current major is **Master of Science in Information Networking**, focusing on computer systems, artificial intelligence, and cybersecurity.
 
-I previously had internship experience in many job posisitions 💼, including [Chinasoft International](https://www.chinasofti.com/en/) and [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/). I'm currently a research intern at [Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), under the supervision of [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao). I am enthusiastic about designing and building advanced intelligence systems, which are practical enough to shape the world in a better way. My research interests include multimodal, LLM, federated learning, AI4Sci, etc.
+Previously, I completed my undergraduate studies - **Bachelor of Engineering in Information Security** at the [College of Cyber Science](https://encyber.nankai.edu.cn/), [Nankai University](https://en.nankai.edu.cn/) in Tianjin, China. I have a strong foundation in computer science and engineering, especially for software development and machine learning. 
 
-I am eager to seek a stage with more possibilities to grow, to learn, and to contribute. And more importantly, a place where I can experience the diversity of people, culture, and ideas. **I just love hearing about different lives and different perspectives! Wild and free of the cage. 👐** That's why I am pursuing a master degree of Computer Science in top universities worldwide. **I wholeheartedly believe that this is the right track and life experience that I have been looking for the all the time.**
+As for my professional experience, I previously had internship experience in many job positions 💼. For research, I once worked as a Research Assistant (RA) at the [Tsinghua University](https://www.tsinghua.edu.cn/en/), under the supervision of [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao). I am enthusiastic about designing and building advanced intelligence systems, which are practical enough to shape the world in a better way. My research interests include multimodal, LLM, federated learning, AI4Sci, etc. I also worked as a Data Analyst Intern at [Chinasoft International](https://www.chinasofti.com/en/) and an Assistant of Operations and Maintenance Engineer at [Longshine Tlogy Croup Co., Ltd](https://en.longshine.com/). **I am eager to applying for 2026 summer internship opportunities in the United States**, especially for Software Development Engineer (SDE) and Machine Learning Engineer (MLE).
 
-Moreover, I am someone who is passionate about life 🤹. I am a big fan of films, TV series and soccer sports. I am recently finished several chapters of a [movie-script-like novel](https://docs.google.com/document/d/1XchgpGe91bVJ1FBVQjxBmedlkscwkeBAmE16nMZU2gQ/edit?usp=sharing) about mind-uploading, which is a promising techology that fascinates me a lot. When it comes to my passion for sport, it represents me both in the pitch and outside it. I used to build a intelligence system for data analys and management of Premier League clubs, which is a project that combines my interests in both CS and sports.The codes is available now on my [GitHub](https://github.com/ErwinZhou/DatabaseSystem2022). I have many other repositories on [GitHub](https://github.com/ErwinZhou), including some of my course projects and research projects. That's all attributed to my deeply appreciation of the free and open-source community. I am keen to contribute to it.
+I am eager to seek a stage with more possibilities to grow, to learn, and to contribute. And more importantly, a place where I can experience the diversity of people, culture, and ideas. **I just love hearing about different lives and different perspectives! Wild and free of the cage. 👐** 
 
-Feel free to contact me through my [email](mailto:erwinzhou10@gmail.com). Or you can reach me in FIT building 4-307 at TsingHua University, Beijing, China. I am always open to new opportunities and collaborations, embracing a more diverse world. 
+Moreover, I am someone who is passionate about life 🤹. I am a big fan of films, TV series, and soccer sports. I am recently finished several chapters of a [movie-script-like novel](https://docs.google.com/document/d/1XchgpGe91bVJ1FBVQjxBmedlkscwkeBAmE16nMZU2gQ/edit?usp=sharing) about mind-uploading, which is a promising techology that fascinates me a lot. When it comes to my passion for sport, it represents me both in the pitch and outside it. I used to build a intelligence system for data analys and management of Premier League clubs, which is a project that combines my interests in both CS and sports.The codes is available now on my [GitHub](https://github.com/ErwinZhou/DatabaseSystem2022). I have many other repositories on [GitHub](https://github.com/ErwinZhou), including some of my course projects and research projects. That's all attributed to my deeply appreciation of the **free and open-source community**. I am keen to contribute to it. I am also the founder of the [NKU-FY](https://github.com/NKU-feiyue) organization, which aims to help more graduate applicants at Nankai University applying for graduate schools outside China. 
+
+Feel free to contact me through my Andrew [email](mailto:yuchenz8@andrew.cmu.edu). Or you can reach me at CMU campus. I am always open to new opportunities and collaborations, embracing a more diverse world. 
 
 
 News 🎉
@@ -29,19 +31,26 @@ News 🎉
 
 Education 🎓
 ------  
+<img align="right" width="88" src="../images/Carnegie_Mellon_University_seal.png" />
+
+- **M.S. in Information Networking** &emsp; 📌 2025.8.11 — 2029.12.13
+  - [Information Networking Institute](https://www.cmu.edu/ini/) • [College of Engineering](https://www.cmu.edu/engineering/) • [Carnegie Mellon University](https://www.cmu.edu/)
+  - Advisor: [Dr. Mohamed Farag](https://www.cmu.edu/ini/about/team/farag.html)
+
+
 <img align="right" width="88" src="../images/Nankai.png" />
 
-- **B.E. in Information Security** &emsp; 📌 2021.9.1 — Present
+- **B.E. in Information Security** &emsp; 📌 2021.9.1 — 2025.6.30
   - [College of Cyber Science](https://encyber.nankai.edu.cn/) • [Nankai University](https://en.nankai.edu.cn/), Tianjin, China
   - Advisor: [Prof. Zheli Liu](https://scholar.google.co.uk/citations?user=PpBb6vUAAAAJ&hl=en&oi=ao)
-  - Capstone Project: 
+  - Capstone Thesis: Hierarchical Therapeutical Coding for Parent-Child Interaction Using Large Language Models
 
 
 Experience 💼
 ------
 <img align="right" width="88" src="../images/TsingHua.png" />
 
-- **[Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024.7.17 — Present
+- **[Beijing National Research Center for Information Science and Technology (BNRIST)](https://www.bnrist.tsinghua.edu.cn/bnristen/) • [Tsinghua University](https://www.tsinghua.edu.cn/en/)** &emsp; 📌 2024.7.17 — 2025.7.20
   - Position: **Research Assistant**
   - Advisor: [Dr. Sicheng Zhao](https://sites.google.com/view/schzhao)
   - Focus: Multimodal, LLM, federated learning, etc.
@@ -79,6 +88,6 @@ I bet you will find something interesting there. 😄
 
 Contact me 📧
 ------
-[Email](mailto:erwinzhou10@gmail.com) / [GitHub](https://github.com/ErwinZhou) / [Wechat](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/social_media/WeChat.jpg) / [Blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg)
+[Email](mailto:yuchenz8@andrew.cmu.edu) / [GitHub](https://github.com/ErwinZhou) / [Wechat](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/social_media/WeChat.jpg) / [Blog](https://raw.githubusercontent.com/ErwinZhou/pics_home/main/others/issues/not_available.jpg)
 
 

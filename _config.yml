@@ -24,11 +24,11 @@ author:
   avatar           : "profile.png"
   name             : "Yuchen Zhou"
   pronouns         : "he/him"  
-  bio              : "Busy preparing for the future"
-  location         : "Beijing, 100084, China"
-  employer         : "Nankai University"
-  uri              : "https://erwinzhou.github.io" # Used for author profile link
-  email            : "erwinzhou10@gmail.com" 
+  bio              : "My story, one of a kind"
+  location         : "Pittsburgh, Pennsylvania, United States"
+  employer         : "Carnegie Mellon University University"
+  uri              : "https://www.linkedin.com/in/yuchen-zhou-325513317/" # Used for author profile link
+  email            : "yuchenz8@andrew.cmu.edu" 
 
   # Academic websites
   arxiv            : # URL
