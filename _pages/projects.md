@@ -93,7 +93,7 @@ author_profile: true
     <h2 style="margin-top: 0;">Internet Database Development 2023: NukeClear Vision</h2>
     <p><strong>Yuchen Zhou</strong>, Xiaoyang Ji, Tongxi Wu, Yafei Hu</p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
-    <p><strong>Overview:</strong> The final project of this course is developing a website aimed at raising awareness about the dangers of nuclear pollution. The goal is to educate the public on the severity of nuclear pollution and promote actions to reduce its impact.</p>
+    <p><strong>Overview:</strong> The final project of this course is to develop a website aimed at raising awareness about the dangers of nuclear pollution. The goal is to educate the public on the severity of nuclear pollution and promote actions to reduce its impact.</p>
     <p><strong>Keywords:</strong> Web Development, Yii2, HTML&CSS, SQL</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/4a0b9b23-77d3-475d-8dad-89f9ed99819f">Demo</a>] [<a href="https://github.com/NKU-Data-Titans/NKU-InternetDatabaseDevelopment2023/tree/main/yii2/data/team">Report</a>] [<a href="https://github.com/NKU-Data-Titans/NKU-InternetDatabaseDevelopment2023">Code</a>]</p>
   </div>
@@ -107,7 +107,7 @@ author_profile: true
     <h2 style="margin-top: 0;">Software Engineering 2024: Smart Fishery Monitoring System</h2>
     <p><strong>Yuchen Zhou</strong>, Mingjie Qi, Haofu Yang, Wenfei Xie, Jing Wu</p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
-    <p><strong>Overview:</strong> The final project of this course is developing a smart fishery monitoring system to help help famers monitor the fishery resources and equipments in real-time and analyze the fishery data. It also includes intelligent functions like object recognition and chatbot.</p>
+    <p><strong>Overview:</strong> The final project of this course is to develoo a smart fishery monitoring system to help farmers monitor the fishery resources and equipment in real-time and analyze the fishery data. It also includes intelligent functions like object recognition and a chatbot.</p>
     <p><strong>Keywords:</strong> Software Engineering, Web Development, Python, FastAPI, YOLO, SQL, HTML&CSS</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/d5d01bc5-6dc2-4440-a731-1ce978485c69">Demo</a>] [<a href="../files/works/SoftwareEngineering_Final_Project.pdf">Report</a>]  [<a href="https://github.com/Starlight0798/Software-Engineering-frontend">Code1</a>] [<a href="https://github.com/Starlight0798/Software-Engineering-backend">Code2</a>]</p>
   </div>
