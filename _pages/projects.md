@@ -65,7 +65,7 @@ author_profile: true
     <h2 style="margin-top: 0;">Database System 2023: An Intelligent DBMS for Premier League</h2>
     <p><strong>Yuchen Zhou</strong></p>
     <p><a href="https://en.nankai.edu.cn/">Nankai University</a> • <a href="https://encyber.nankai.edu.cn/">College of Cyber Science</a></p>
-    <p><strong>Overview:</strong> The final project of this course is an intelligent DBMS for Premier League. It includes three simulational modes for coaches, club managers, and FA additional intelligent functions. <strong>It is still updating...</strong></p>
+    <p><strong>Overview:</strong> The final project of this course is an intelligent DBMS for Premier League. This project includes three simulation modes for coaches, club managers, and FA, with additional intelligent functions. <strong>It is still updating...</strong></p>
     <p><strong>Keywords:</strong> DBMS, JAVA, MySQL, JDBC, Machine Learning, Intelligent System</p>
     <p><strong>Outcomes:</strong> [<a href="https://github.com/user-attachments/assets/02112d38-f0ef-40c1-8d80-2fd037c5d551" title="https">Demo</a>] [<a href="../files/works/PLDatabase.pdf">Report</a>] [<a href="https://github.com/ErwinZhou/DatabaseSystem2023">Code</a>]</p>
   </div>
