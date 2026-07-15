@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout title="Projects" description="Software engineering projects by Yuchen Zhou (Erwin Chow).">
+  <section class="shell pt-16 pb-10 sm:pt-20">
+    <p class="eyebrow">Projects</p>
+    <h1 class="mt-4 text-3xl tracking-tight sm:text-4xl">Things I've built</h1>
+    <p class="mt-4 max-w-xl font-sans text-sm leading-relaxed text-muted">
+      A few projects with the engineering behind them — the problem, the design decisions, and the
+      trade-offs. Each links to source and, where available, a live demo.
+    </p>
+  </section>
+
+  <section class="shell pb-10">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        projects.map((p) => (
+          <ProjectCard
+            href={`/projects/${p.id}`}
+            title={p.data.title}
+            summary={p.data.summary}
+            stack={p.data.stack}
+            github={p.data.github}
+            demo={p.data.demo}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

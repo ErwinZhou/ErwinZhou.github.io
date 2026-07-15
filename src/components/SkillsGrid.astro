@@ -1,0 +1,40 @@
+---
+import { SKILLS } from '../data/experience';
+
+const flat = SKILLS.flatMap((group) =>
+  group.items.map((item) => ({ group: group.group, item })),
+);
+
+function badgeLabel(name: string): string {
+  const clean = name.split('(')[0].trim();
+  if (clean.length <= 4) return clean;
+  const words = clean.split(/[\s/]+/).filter(Boolean);
+  if (words.length >= 2) return words.map((w) => w[0]).join('').toUpperCase().slice(0, 3);
+  return clean.slice(0, 3);
+}
+
+const half = Math.ceil(flat.length / 2);
+---
+
+<div class="grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-5 lg:grid-cols-8">
+  {
+    flat.map(({ group, item }, i) => (
+      <div
+        data-reveal={i < half ? 'left' : 'right'}
+        style={`transition-delay: ${(i % half) * 45}ms`}
+        class="group relative flex flex-col items-center hover:z-10 focus-within:z-10"
+      >
+        <div
+          tabindex="0"
+          class="flex h-14 w-14 items-center justify-center rounded-full border-2 border-line bg-surface font-sans text-xs font-semibold text-ink transition-all duration-300 ease-out group-hover:scale-110 group-hover:border-accent group-hover:bg-accent group-hover:text-bg group-focus-within:scale-110 group-focus-within:border-accent group-focus-within:bg-accent group-focus-within:text-bg sm:h-20 sm:w-20 sm:text-sm"
+        >
+          {badgeLabel(item)}
+        </div>
+        <span class="pointer-events-none absolute top-full mt-2 max-w-[7rem] translate-y-1 whitespace-normal text-center font-sans text-[0.65rem] leading-tight text-muted opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
+          {item}
+          <span class="block text-accent">{group}</span>
+        </span>
+      </div>
+    ))
+  }
+</div>

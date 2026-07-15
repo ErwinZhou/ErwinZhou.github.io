@@ -1,0 +1,171 @@
+@import 'tailwindcss';
+
+/* Self-hosted fonts (Tiempos/Styrene-free near-equivalents) */
+@import '@fontsource-variable/newsreader';
+@import '@fontsource-variable/hanken-grotesk';
+@import '@fontsource-variable/jetbrains-mono';
+
+/*
+  Anthropic-style layout/type with a soft-blue accent, exposed as Tailwind v4
+  theme tokens. Usage examples: bg-bg, text-ink, text-muted, text-accent,
+  border-line, bg-surface, font-serif, font-sans, font-mono.
+*/
+@theme {
+  --color-bg: #e9f3f9;        /* soft blue, "Soft blues" palette */
+  --color-ink: #12202a;       /* deep blue-slate, near-black */
+  --color-muted: #4f6b7a;     /* secondary text, blue-gray */
+  --color-accent: #3f84b3;    /* soft blue */
+  --color-accent-ink: #2c6690;/* darker blue for hover/contrast */
+  --color-line: #cfe1ec;      /* hairline borders, blue tint */
+  --color-surface: #dcedf5;   /* cards / code blocks, pale blue */
+
+  --font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Hanken Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SFMono-Regular', monospace;
+
+  --shell-max: 68rem;         /* ~1088px content shell */
+  --prose-max: 44rem;         /* ~704px reading measure */
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(1100px 650px at 12% -8%, color-mix(in srgb, #8fc4d9 55%, transparent), transparent 60%),
+    radial-gradient(900px 600px at 100% 4%, color-mix(in srgb, #bde3f2 60%, transparent), transparent 55%),
+    radial-gradient(800px 500px at 50% 100%, color-mix(in srgb, #56a1bf 25%, transparent), transparent 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-accent) 22%, transparent);
+}
+
+/* Focus ring for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Shared content shell */
+.shell {
+  width: 100%;
+  max-width: var(--shell-max);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Eyebrow / section labels (sans, tracked) */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Long-form content (blog posts + project write-ups) */
+.prose {
+  max-width: var(--prose-max);
+  font-size: 1.075rem;
+  line-height: 1.75;
+  color: var(--color-ink);
+}
+.prose > * + * { margin-top: 1.25em; }
+.prose h2 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-top: 2.2em;
+  letter-spacing: -0.01em;
+}
+.prose h3 {
+  font-size: 1.25rem;
+  margin-top: 1.8em;
+}
+.prose a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 3px;
+}
+.prose a:hover { color: var(--color-accent-ink); }
+.prose strong { font-weight: 650; }
+.prose ul, .prose ol { padding-left: 1.4em; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li + li { margin-top: 0.4em; }
+.prose blockquote {
+  border-left: 2px solid var(--color-accent);
+  padding-left: 1.1em;
+  color: var(--color-muted);
+  font-style: italic;
+}
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--color-surface);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+.prose pre {
+  font-family: var(--font-mono);
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.prose pre code { background: transparent; padding: 0; }
+.prose img { border-radius: 10px; border: 1px solid var(--color-line); }
+.prose hr { border: 0; border-top: 1px solid var(--color-line); margin: 2.4em 0; }
+
+/* Full-page snap scroll, opted into per-page via html.snap-page */
+html.snap-page {
+  scroll-snap-type: y mandatory;
+}
+.snap-section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 4rem; /* clears the sticky nav on snap */
+}
+
+/* Scroll-triggered reveal, toggled by a small IntersectionObserver in BaseLayout */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-reveal='left'] { transform: translateX(-32px); }
+[data-reveal='right'] { transform: translateX(32px); }
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.snap-page { scroll-snap-type: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,39 @@
+---
+title: 'Distributed Bitcoin Miner'
+summary: 'A reliable transport protocol (LSP) over UDP in Go, plus a fault-tolerant distributed miner that reassigns work dynamically across nodes — >99% delivery accuracy and 43% less recomputation overhead.'
+stack: ['Go', 'Distributed Systems', 'Networking', 'Concurrency']
+featured: true
+order: 2
+date: 2025-10-01
+---
+
+> ⚠️ Placeholder write-up — metrics are from the résumé; prose/diagram are stand-ins to refine.
+> CMU course code is private per academic-integrity policy.
+
+## Overview
+
+A two-part systems project: first a custom reliable transport protocol on top of UDP, then a
+distributed mining system built on top of it that stays correct when workers crash.
+
+## Problem
+
+UDP is fast but unreliable — packets drop, duplicate, and arrive out of order. On top of that, a
+distributed compute job needs to keep making progress even when individual nodes die.
+
+## What I built
+
+- A custom **Live Sequence Protocol (LSP)** in Go: a sliding-window protocol with retransmission
+  and in-order delivery, race-free under concurrent connections.
+- A **distributed, parallel miner** on top of LSP with **dynamic task reassignment**, so work from
+  a crashed node is redistributed rather than lost.
+
+## Results
+
+- **>99%** delivery accuracy over lossy UDP.
+- **−43%** recomputation overhead from dynamic reassignment, improving throughput and fault
+  tolerance under node crashes.
+
+## Trade-offs & limitations
+
+- The sliding-window sizing is fixed; an adaptive window would handle variable network conditions
+  better. *(Expand with your own notes.)*

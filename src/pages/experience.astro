@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Timeline from '../components/Timeline.astro';
+import { EXPERIENCE, EDUCATION } from '../data/experience';
+import { RESUME_PATH } from '../data/site';
+---
+
+<BaseLayout title="Experience" description="Education and professional experience of Yuchen Zhou (Erwin Chow).">
+  <section class="shell pt-16 pb-10 sm:pt-20">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div class="max-w-xl">
+        <p class="eyebrow">Experience</p>
+        <h1 class="mt-4 text-3xl tracking-tight sm:text-4xl">Where I've worked & studied</h1>
+        <p class="mt-4 font-sans text-sm leading-relaxed text-muted">
+          An interactive résumé — click any role to expand the details. Prefer the one-pager?
+          Grab the PDF.
+        </p>
+      </div>
+      <a
+        href={RESUME_PATH}
+        class="inline-flex shrink-0 items-center gap-2 rounded-full bg-ink px-5 py-2.5 font-sans text-sm text-bg transition-colors hover:bg-accent-ink"
+      >
+        Download résumé
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="shell border-t border-line py-12">
+    <h2 class="eyebrow mb-8">Professional experience</h2>
+    <Timeline items={EXPERIENCE} open={true} />
+  </section>
+
+  <section class="shell border-t border-line py-12">
+    <h2 class="eyebrow mb-8">Education</h2>
+    <Timeline items={EDUCATION} open={true} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,61 @@
+---
+import { PHOTOS } from '../data/photos';
+---
+
+<div class="scrollbar-thin -mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto px-6 pb-3">
+  {
+    PHOTOS.map((photo, i) => (
+      <button
+        type="button"
+        class="group relative block h-56 shrink-0 snap-start overflow-hidden rounded-xl border border-line bg-surface focus:outline-none sm:h-72 md:h-80"
+        data-lightbox
+        data-src={photo.src}
+        data-caption={photo.caption}
+        aria-label={`View photo: ${photo.caption}`}
+      >
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          loading={i < 4 ? 'eager' : 'lazy'}
+          decoding="async"
+          class="h-full w-auto object-cover transition duration-500 group-hover:scale-[1.03]"
+        />
+        <span class="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/70 to-transparent p-3 text-left font-sans text-xs text-bg opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
+          {photo.caption}
+        </span>
+      </button>
+    ))
+  }
+</div>
+
+<!-- Lightbox -->
+<dialog
+  id="lightbox"
+  class="m-auto max-h-[92vh] max-w-[92vw] bg-transparent backdrop:bg-ink/80 backdrop:backdrop-blur-sm"
+>
+  <figure class="flex flex-col items-center gap-3">
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full rounded-xl" />
+    <figcaption id="lightbox-cap" class="font-sans text-sm text-bg"></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const cap = document.getElementById('lightbox-cap');
+
+  if (dialog && img && cap) {
+    document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        img.src = btn.dataset.src ?? '';
+        img.alt = btn.dataset.caption ?? '';
+        cap.textContent = btn.dataset.caption ?? '';
+        dialog.showModal();
+      });
+    });
+    // Click on backdrop closes.
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>

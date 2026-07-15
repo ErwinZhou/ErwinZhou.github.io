@@ -1,0 +1,63 @@
+---
+import Tag from './Tag.astro';
+import type { TimelineItem } from '../data/experience';
+
+interface Props {
+  items: TimelineItem[];
+  open?: boolean; // expand the first item by default
+}
+const { items, open = false } = Astro.props;
+---
+
+<ol class="relative ml-3 border-l border-line">
+  {
+    items.map((item, i) => (
+      <li class="relative pl-7 pb-9 last:pb-0">
+        <span class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full border border-accent bg-bg" />
+        <details class="group" open={open && i === 0}>
+          <summary class="cursor-pointer list-none">
+            <div class="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+              <div>
+                <span class="text-lg tracking-tight">{item.role}</span>
+                <span class="text-muted"> · </span>
+                {item.url ? (
+                  <a href={item.url} class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent" rel="noopener">
+                    {item.org}
+                  </a>
+                ) : (
+                  <span>{item.org}</span>
+                )}
+              </div>
+              <span class="shrink-0 font-sans text-xs text-muted">
+                {item.start} – {item.end}
+              </span>
+            </div>
+            <p class="mt-0.5 font-sans text-xs text-muted">
+              {item.location}
+              {item.detail && <span> · {item.detail}</span>}
+              <span class="ml-1 inline-block text-accent-ink transition-transform group-open:rotate-90">›</span>
+            </p>
+          </summary>
+
+          {item.bullets && item.bullets.length > 0 && (
+            <ul class="mt-3 space-y-2 font-sans text-sm leading-relaxed text-muted">
+              {item.bullets.map((b) => (
+                <li class="relative pl-4 before:absolute before:left-0 before:text-accent before:content-['—']">
+                  {b}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {item.tags && item.tags.length > 0 && (
+            <div class="mt-3 flex flex-wrap gap-1.5">
+              {item.tags.map((t) => (
+                <Tag label={t} />
+              ))}
+            </div>
+          )}
+        </details>
+      </li>
+    ))
+  }
+</ol>

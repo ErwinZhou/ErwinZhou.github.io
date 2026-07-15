@@ -1,0 +1,56 @@
+---
+title: 'BusTub — Relational Database Internals'
+summary: 'Built core internals of a disk-oriented relational DBMS in C++ — buffer pool, B+ tree indexing, a query execution engine, and optimizer rewrite rules. Top 5% on the performance leaderboard.'
+stack: ['C++', 'Database Internals', 'Concurrency', 'Query Optimization']
+featured: true
+order: 1
+date: 2025-12-01
+---
+
+> ⚠️ Placeholder write-up — real numbers are from the résumé; prose and the architecture diagram
+> are stand-ins for you to refine. CMU course code is private per academic-integrity policy.
+
+## Overview
+
+BusTub is a teaching DBMS used in CMU's database systems course. Over the semester I implemented
+its performance-critical internals in C++: a disk-oriented buffer pool manager, B+ tree indexing,
+a transaction-aware query execution engine, and rule-based optimizations.
+
+## Problem
+
+A database has to serve correct results *and* stay fast as data outgrows memory. That means
+careful page management, concurrency control without data races, and an optimizer that rewrites
+query plans into cheaper equivalents.
+
+## Architecture
+
+```
+SQL → Binder → Planner → Optimizer (rewrite rules) → Execution engine
+                                                          │
+                          Buffer Pool Manager ◄───────────┘
+                                   │
+                            Disk (pages, B+ tree)
+```
+
+*(Replace with a real diagram — e.g. exported from Excalidraw.)*
+
+## What I built
+
+- A **disk-oriented buffer pool manager** with page eviction and pin/unpin semantics.
+- **B+ tree indexing** supporting point and range lookups under concurrent access.
+- A **query execution engine** with both transaction-level and batch (vectorized) operators.
+- **5+ optimizer rewrite rules**: filter–scan merging, SeqScan/OrderBy → IndexScan selection,
+  NestedLoopJoin → HashJoin, and Sort–Limit → TopN.
+- Performance operators: **external merge sort**, window functions, and a **GRACE hash join** with
+  disk-backed intermediate pages.
+
+## Results
+
+- **+56%** benchmark performance from the optimizer and operator work.
+- Ranked in the **top 5%** of the course leaderboard.
+
+## Trade-offs & limitations
+
+- Optimizer rules are heuristic, not cost-based — great wins on the benchmark shapes, but a true
+  cost model would generalize better.
+- *(Add your own reflections here.)*
