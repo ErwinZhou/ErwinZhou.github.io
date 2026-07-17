@@ -1,23 +1,14 @@
 ---
 import { PHOTOS } from '../data/photos';
-
-const SIZE_CLASSES: Record<'sm' | 'md' | 'lg', string> = {
-  sm: 'w-28 h-36 sm:w-32 sm:h-40',
-  md: 'w-32 h-40 sm:w-40 sm:h-52',
-  lg: 'w-36 h-48 sm:w-48 sm:h-60',
-};
-
-const MOBILE_ROTATE = [-4, 3, -2, 5, -3, 4, -5, 2, -4, 3, -2, 5, -3, 4, -6];
 ---
 
-<!-- Mobile: simple rotated masonry (absolute chaos doesn't survive narrow viewports) -->
-<div class="columns-2 gap-3 sm:hidden">
+<!-- Static flush grid, tiles pieced together edge-to-edge like a puzzle -->
+<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5">
   {
     PHOTOS.map((photo, i) => (
       <button
         type="button"
-        style={`transform: rotate(${MOBILE_ROTATE[i % MOBILE_ROTATE.length]}deg)`}
-        class="group relative mb-3 block w-full break-inside-avoid overflow-hidden rounded-lg border border-line bg-surface shadow-md focus:outline-none"
+        class="block aspect-square overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
         data-lightbox
         data-src={photo.src}
         data-caption={photo.caption}
@@ -26,38 +17,10 @@ const MOBILE_ROTATE = [-4, 3, -2, 5, -3, 4, -5, 2, -4, 3, -2, 5, -3, 4, -6];
         <img
           src={photo.src}
           alt={photo.alt}
-          loading={i < 6 ? 'eager' : 'lazy'}
-          decoding="async"
-          class="aspect-[3/4] w-full object-cover"
-        />
-      </button>
-    ))
-  }
-</div>
-
-<!-- sm+: scattered corkboard collage -->
-<div class="relative hidden h-[560px] sm:block md:h-[620px]">
-  {
-    PHOTOS.map((photo, i) => (
-      <button
-        type="button"
-        style={`top: ${photo.top}; left: ${photo.left}; transform: rotate(${photo.rotate}deg);`}
-        class={`group absolute overflow-hidden rounded-lg border-4 border-bg bg-surface shadow-lg transition-all duration-300 ease-out hover:z-20 hover:scale-105 hover:rotate-0 hover:shadow-xl focus:z-20 focus:scale-105 focus:rotate-0 focus:outline-none ${SIZE_CLASSES[photo.size]}`}
-        data-lightbox
-        data-src={photo.src}
-        data-caption={photo.caption}
-        aria-label={`View photo: ${photo.caption}`}
-      >
-        <img
-          src={photo.src}
-          alt={photo.alt}
-          loading={i < 6 ? 'eager' : 'lazy'}
+          loading={i < 8 ? 'eager' : 'lazy'}
           decoding="async"
           class="h-full w-full object-cover"
         />
-        <span class="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-ink/70 to-transparent p-2 text-left font-sans text-[0.65rem] text-bg opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
-          {photo.caption}
-        </span>
       </button>
     ))
   }
