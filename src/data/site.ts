@@ -1,24 +1,25 @@
 export const SITE = {
   name: 'Yuchen Zhou',
-  altName: 'Erwin Chow',
+  altName: 'Erwin',
   role: 'Software Engineer',
   // Shown next to `role` in the hero eyebrow and mirrored in public/images/og.svg
   // (that file is a static SVG and must be hand-edited to match if this changes).
   credentials: 'CMU MS · 2027 New Grad',
-  title: 'Yuchen Zhou — Software Engineer',
+  title: 'Yuchen Zhou — System Architect',
   description:
-    'Yuchen Zhou (Erwin Chow) — software engineer and CMU MS student building practical, reliable systems. Backend, distributed systems, and data infrastructure. Seeking 2027 New Grad SDE roles.',
+    'Yuchen Zhou — A CMU Grad enjoys building scalable infrastructure for AI era with a focus on database internals and agentic systems. Seeking 2027 New Grad SDE roles.',
   url: 'https://erwinzhou.github.io',
-  email: 'yuchenz8@andrew.cmu.edu',
+  email: 'erwinzhou10@gmail.com',
   // Short value proposition shown in the hero.
   tagline:
-    'Software engineer building practical, reliable systems — backend, distributed systems, and data infrastructure.',
+    'System Architect - System Design, Database Internals (Vec & Query Opti), Agentic Development',
 };
 
 export const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/ErwinZhou' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yuchen-zhou-325513317/' },
   { label: 'Email', href: `mailto:${SITE.email}` },
+  { label: 'X', href: 'https://x.com/erwinzhou_?s=11' },
 ] as const;
 
 export const NAV = [
