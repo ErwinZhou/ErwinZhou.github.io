@@ -5,14 +5,14 @@ export const SITE = {
   // Shown next to `role` in the hero eyebrow and mirrored in public/images/og.svg
   // (that file is a static SVG and must be hand-edited to match if this changes).
   credentials: 'CMU MS · 2027 New Grad',
-  title: 'Yuchen Zhou — System Architect',
+  title: 'Yuchen Zhou — Infra Architect',
   description:
     'Yuchen Zhou — A CMU Grad enjoys building scalable infrastructure for AI era with a focus on database internals and agentic systems. Seeking 2027 New Grad SDE roles.',
   url: 'https://erwinzhou.github.io',
   email: 'erwinzhou10@gmail.com',
   // Short value proposition shown in the hero.
   tagline:
-    'System Architect - System Design, Database Internals (Vec & Query Opti), Agentic Development',
+    'Infra Architect - System Design, Database Internals, AI/Agents Infra',
 };
 
 export const SOCIALS = [

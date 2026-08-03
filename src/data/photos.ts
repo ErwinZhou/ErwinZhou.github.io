@@ -11,7 +11,8 @@ export const PHOTOS: Photo[] = [
   { src: '/images/life-1.jpeg', alt: 'Life photo', caption: 'On the pitch' },
   { src: '/images/life-cmu.jpeg', alt: 'CMU campus', caption: 'CMU campus' },
   { src: '/images/life-2.jpeg', alt: 'Life photo', caption: 'Pittsburgh' },
-  { src: '/images/life-with-friends.jpeg', alt: 'With friends', caption: 'With friends' },
+  { src: '/images/life-with-friends.jpeg', alt: 'With friends', caption: 'With Aryan' },
+  { src: '/images/life-with-friends-2.jpeg', alt: 'With friends', caption: 'With Max' },
   { src: '/images/life-3.jpeg', alt: 'Life photo', caption: 'Weekend' },
   { src: '/images/life-cmu-2.jpeg', alt: 'CMU campus', caption: 'Campus walks' },
   { src: '/images/life-4.jpeg', alt: 'Life photo', caption: 'Matchday' },
@@ -23,4 +24,5 @@ export const PHOTOS: Photo[] = [
   { src: '/images/life-7.jpeg', alt: 'Life photo', caption: 'Film night' },
   { src: '/images/life-9.jpeg', alt: 'Life photo', caption: 'Coffee & code' },
   { src: '/images/life-10.jpeg', alt: 'Life photo', caption: 'Somewhere new' },
+  { src: '/images/life-12.jpeg', alt: 'Life photo', caption: 'Somewhere new' },
 ];
