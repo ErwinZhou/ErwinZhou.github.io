@@ -18,40 +18,53 @@ const ICONS = '/images/icons';
 
 const ICON_SLUGS: Record<string, IconRef> = {
   // Programming Languages
-  'C++': `${DEVICON}/cplusplus/cplusplus-original.svg`,
+  SQL: `${DEVICON}/mysql/mysql-original.svg`,
+  Shell: `${DEVICON}/bash/bash-original.svg`,
+  Rust: `${DEVICON}/rust/rust-original.svg`,
+  TypeScript: `${ICONS}/typescript.svg`,
+  JavaScript: `${ICONS}/javascript.svg`,
   C: `${ICONS}/c.svg`,
+  'C++': `${DEVICON}/cplusplus/cplusplus-original.svg`,
   Python: `${DEVICON}/python/python-original.svg`,
   Java: `${ICONS}/java.svg`,
   Go: `${ICONS}/go.svg`,
-  Rust: `${DEVICON}/rust/rust-original.svg`,
-  SQL: `${DEVICON}/mysql/mysql-original.svg`,
-  Shell: `${DEVICON}/bash/bash-original.svg`,
 
   // Cloud
-  AWS: `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
-  'Amazon Bedrock': `${ICONS}/aws-amazon-bedrock.svg`,
-  'Amazon EventBridge': `${ICONS}/aws-amazon-eventbridge.svg`,
-  'AWS Fargate': `${ICONS}/aws-aws-fargate.svg`,
-  'AWS Lambda': `${ICONS}/aws-aws-lambda.svg`,
-  GCP: `${DEVICON}/googlecloud/googlecloud-original.svg`,
-  DynamoDB: `${DEVICON}/dynamodb/dynamodb-original.svg`,
+  'GCP Compute Engine': `${ICONS}/gcp-compute-engine.svg`,
+  'Google Kubernetes Engine': `${ICONS}/gcp-google-kubernetes-engine.svg`,
+  Microservices: `${ICONS}/k8s-service.svg`,
   Kubernetes: `${DEVICON}/kubernetes/kubernetes-plain.svg`,
   Terraform: `${DEVICON}/terraform/terraform-original.svg`,
+  AWS: `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
   Docker: `${DEVICON}/docker/docker-original.svg`,
-  Microservices: `${ICONS}/k8s-service.svg`,
+  GCP: `${DEVICON}/googlecloud/googlecloud-original.svg`,
+  'Amazon Bedrock': `${ICONS}/aws-amazon-bedrock.svg`,
+  'Amazon EventBridge': `${ICONS}/aws-amazon-eventbridge.svg`,
+  'AWS Lambda': `${ICONS}/aws-aws-lambda.svg`,
+  'AWS Fargate': `${ICONS}/aws-aws-fargate.svg`,
 
   // Tools
-  Git: `${ICONS}/git.svg`,
-  Redis: `${DEVICON}/redis/redis-original.svg`,
+  PyTorch: `${DEVICON}/pytorch/pytorch-original.svg`,
+  MCP: `${ICONS}/model-context-protocol.svg`,
   Kafka: `${DEVICON}/apachekafka/apachekafka-original.svg`,
   'Hadoop / MapReduce': `${DEVICON}/hadoop/hadoop-original.svg`,
+  ClickHouse: `${ICONS}/clickhouse.svg`,
+  'Claude Code': `${ICONS}/claude-code.svg`,
+  Git: `${ICONS}/git.svg`,
+  Codex: `${ICONS}/codex.svg`,
   FastAPI: `${DEVICON}/fastapi/fastapi-original.svg`,
   PostgreSQL: `${DEVICON}/postgresql/postgresql-original.svg`,
   Neo4J: `${DEVICON}/neo4j/neo4j-original.svg`,
-  PyTorch: `${DEVICON}/pytorch/pytorch-original.svg`,
-  MCP: `${ICONS}/model-context-protocol.svg`,
-  'Claude Code': `${ICONS}/claude-code.svg`,
-  Codex: `${ICONS}/codex.svg`,
+  Redis: `${DEVICON}/redis/redis-original.svg`,
+};
+
+// Row 3 is the visual center; each column's items sit as close to it as symmetry allows.
+const ROW_SLOTS: Record<number, number[]> = {
+  1: [3],
+  2: [2, 4],
+  3: [2, 3, 4],
+  4: [1, 2, 4, 5],
+  5: [1, 2, 3, 4, 5],
 };
 
 type Icon = { kind: 'svg'; path: string } | { kind: 'image'; src: string };
@@ -81,6 +94,18 @@ const sections = SKILLS.map((group) => ({
   ...group,
   items: group.items.map((item) => ({ item, icon: iconFor(item) })),
 }));
+
+// Slice each group's flat item list into its columns (per `columns` counts) for the wedge grid,
+// with each column's items assigned to symmetric row slots around the center row.
+const wedgeSections = SKILLS.map((group) => {
+  let cursor = 0;
+  const columns = group.columns.map((count) => {
+    const items = group.items.slice(cursor, cursor + count).map((item) => ({ item, icon: iconFor(item) }));
+    cursor += count;
+    return { items, rows: ROW_SLOTS[count] };
+  });
+  return { group: group.group, columns };
+});
 ---
 
 {/* Below md: a plain stacked list — the wedge shape needs room the triangles don't have on narrow screens. */}
@@ -123,44 +148,47 @@ const sections = SKILLS.map((group) => ({
   }
 </div>
 
-{/* md and up: three triangular zones meeting at a center point, one per group. */}
+{/* md and up: the page splits into three zones meeting at one point — Cloud (top-left),
+    Tools (bottom-left), Programming Languages (full-height right triangle). No card, no border —
+    the divide is the layout. Each zone is a precise column grid, not a scatter. */}
 <div class="skills-wedge hidden md:block" data-reveal>
-  <div class="wedge-bg wedge-bg--a" aria-hidden="true"></div>
-  <div class="wedge-bg wedge-bg--b" aria-hidden="true"></div>
-  <div class="wedge-bg wedge-bg--c" aria-hidden="true"></div>
+  <div class="wedge-bg wedge-bg--cloud" aria-hidden="true"></div>
+  <div class="wedge-bg wedge-bg--tools" aria-hidden="true"></div>
   <div class="wedge-center" aria-hidden="true"></div>
 
   {
-    sections.map((section, s) => (
-      <div class={`wedge-content wedge-content--${['a', 'b', 'c'][s]}`}>
+    wedgeSections.map((section, s) => (
+      <div class={`wedge-content wedge-content--${['lang', 'cloud', 'tools'][s]}`}>
         <h3 class="skill-section-title font-sans text-sm font-semibold uppercase tracking-wide text-muted">
           {section.group}
         </h3>
-        <div class="wedge-icons">
-          {section.items.map(({ item, icon }, i) => (
-            <button
-              type="button"
-              data-skill
-              aria-pressed="false"
-              aria-label={`${item} — ${section.group}`}
-              class="skill-card skill-card--wedge"
-              style={`--wedge-tilt: ${((i * 37) % 11) - 5}deg; --wedge-shift: ${((i * 17) % 9) - 4}px;`}
-            >
-              <span class="skill-face skill-face--front" aria-hidden="true">
-                {icon?.kind === 'svg' ? (
-                  <svg viewBox="0 0 24 24" fill="currentColor" class="skill-icon" set:html={`<path d="${icon.path}" />`} />
-                ) : icon?.kind === 'image' ? (
-                  <img src={icon.src} alt="" class="skill-icon skill-icon--image" loading="lazy" />
-                ) : (
-                  <span class="skill-fallback">{badgeLabel(item)}</span>
-                )}
-              </span>
-              <span class="skill-face skill-face--back" aria-hidden="true">
-                <span class="skill-name">{displayName(item)}</span>
-                <span class="skill-group">{section.group}</span>
-              </span>
-            </button>
-          ))}
+        <div class="wedge-grid" style={`grid-template-columns: repeat(${section.columns.length}, 1fr);`}>
+          {section.columns.map((col, c) =>
+            col.items.map(({ item, icon }, i) => (
+              <button
+                type="button"
+                data-skill
+                aria-pressed="false"
+                aria-label={`${item} — ${section.group}`}
+                class="skill-card skill-card--wedge"
+                style={`grid-column: ${c + 1}; grid-row: ${col.rows[i]};`}
+              >
+                <span class="skill-face skill-face--front" aria-hidden="true">
+                  {icon?.kind === 'svg' ? (
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="skill-icon" set:html={`<path d="${icon.path}" />`} />
+                  ) : icon?.kind === 'image' ? (
+                    <img src={icon.src} alt="" class="skill-icon skill-icon--image" loading="lazy" />
+                  ) : (
+                    <span class="skill-fallback">{badgeLabel(item)}</span>
+                  )}
+                </span>
+                <span class="skill-face skill-face--back" aria-hidden="true">
+                  <span class="skill-name">{displayName(item)}</span>
+                  <span class="skill-group">{section.group}</span>
+                </span>
+              </button>
+            )),
+          )}
         </div>
       </div>
     ))
@@ -293,39 +321,37 @@ const sections = SKILLS.map((group) => ({
     }
   }
 
-  /* --- Wedge layout (md and up): three triangles meeting at a center point --- */
+  /* --- Wedge layout (md and up) ---
+     The page splits into three zones meeting at one point on the left-middle edge (at VX):
+     Cloud (top-left), Tools (bottom-left) — both trapezoids — and Programming Languages, a
+     triangle spanning the full height on the right. No card/border around it — the divide
+     itself is the layout. Backgrounds are purely decorative and unclipped from content, so
+     nothing gets cut off; content boxes are sized to match the zones underneath. */
   .skills-wedge {
+    --vx: 45%;
     position: relative;
-    aspect-ratio: 16 / 10;
-    border: 1px solid var(--color-line);
-    border-radius: 1.25rem;
-    background: var(--color-bg);
-    overflow: hidden;
+    aspect-ratio: 16 / 15;
   }
 
   .wedge-bg {
     position: absolute;
     inset: 0;
   }
-  .wedge-bg--a {
-    clip-path: polygon(0 0, 100% 0, 50% 56%);
+  .wedge-bg--cloud {
+    clip-path: polygon(0 0, 100% 0, var(--vx) 50%, 0 50%);
     background: var(--color-surface);
   }
-  .wedge-bg--b {
-    clip-path: polygon(0 0, 50% 56%, 0 100%);
-    background: var(--color-bg);
-  }
-  .wedge-bg--c {
-    clip-path: polygon(100% 0, 100% 100%, 50% 56%);
+  .wedge-bg--tools {
+    clip-path: polygon(0 50%, var(--vx) 50%, 100% 100%, 0 100%);
     background: color-mix(in srgb, var(--color-surface) 100%, var(--color-ink) 6%);
   }
 
   .wedge-center {
     position: absolute;
-    top: 56%;
-    left: 50%;
-    width: 3rem;
-    height: 3rem;
+    top: 50%;
+    left: var(--vx);
+    width: 2.25rem;
+    height: 2.25rem;
     border-radius: 9999px;
     background: var(--color-bg);
     border: 1px solid var(--color-line);
@@ -338,8 +364,8 @@ const sections = SKILLS.map((group) => ({
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0.4rem;
-    height: 0.4rem;
+    width: 0.35rem;
+    height: 0.35rem;
     border-radius: 9999px;
     background: var(--color-accent);
     transform: translate(-50%, -50%);
@@ -350,49 +376,47 @@ const sections = SKILLS.map((group) => ({
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
-  .wedge-content--a {
-    top: 2.5rem;
-    left: 50%;
-    width: min(85%, 32rem);
-    transform: translateX(-50%);
-    align-items: center;
-    text-align: center;
+  .wedge-content--lang {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: calc(var(--vx) + 1rem);
+    padding: 1.5rem 1.5rem 1.5rem 0.5rem;
   }
-  .wedge-content--b {
-    bottom: 2.5rem;
-    left: 2rem;
-    width: min(46%, 15rem);
+  .wedge-content--cloud {
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: calc(var(--vx) - 1rem);
+    padding: 1.5rem 0.5rem 1rem 1.5rem;
   }
-  .wedge-content--c {
-    bottom: 2.5rem;
-    right: 2rem;
-    width: min(46%, 15rem);
-    align-items: flex-end;
-    text-align: right;
+  .wedge-content--tools {
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: calc(var(--vx) - 1rem);
+    padding: 1rem 0.5rem 1.5rem 1.5rem;
   }
 
-  .wedge-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-  }
-  .wedge-content--a .wedge-icons {
-    justify-content: center;
-  }
-  .wedge-content--c .wedge-icons {
-    justify-content: flex-end;
+  .wedge-grid {
+    flex: 1;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: 0.5rem;
+    column-gap: 0.85rem;
   }
 
   .skill-card--wedge {
-    width: 3.25rem;
-    height: 3.25rem;
-    transform: rotate(var(--wedge-tilt, 0deg)) translateY(var(--wedge-shift, 0px));
+    width: 2.85rem;
+    height: 2.85rem;
   }
   .skill-card--wedge .skill-icon {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.25rem;
+    height: 1.25rem;
   }
   .skill-card--wedge .skill-name {
     font-size: 0.5rem;
@@ -403,11 +427,15 @@ const sections = SKILLS.map((group) => ({
 
   @media (min-width: 1024px) {
     .skills-wedge {
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 16 / 11;
     }
-    .wedge-content--b,
-    .wedge-content--c {
-      width: min(40%, 17rem);
+    .skill-card--wedge {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+    .skill-card--wedge .skill-icon {
+      width: 1.4rem;
+      height: 1.4rem;
     }
   }
 </style>

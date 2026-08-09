@@ -71,41 +71,59 @@ export const EXPERIENCE: TimelineItem[] = [
 ];
 
 // A condensed, grouped view of skills for the About page + Experience header.
-export const SKILLS: { group: string; items: string[] }[] = [
+// `columns` slices `items` sequentially into the SkillsGrid wedge layout — e.g. [1, 2, 3, 4]
+// means the first item is column 1, the next 2 are column 2, and so on. Counts must sum to items.length.
+export const SKILLS: { group: string; items: string[]; columns: number[] }[] = [
   {
     group: 'Programming Languages',
-    items: ['C++', 'C', 'Python', 'Java', 'Go', 'Rust', 'SQL', 'Shell'],
+    columns: [1, 2, 3, 4],
+    items: [
+      'SQL',
+      'Shell',
+      'Rust',
+      'TypeScript',
+      'JavaScript',
+      'C',
+      'C++',
+      'Python',
+      'Java',
+      'Go',
+    ],
   },
   {
     group: 'Cloud',
+    columns: [5, 3, 4],
     items: [
-      'AWS',
-      'Amazon Bedrock',
-      'Amazon EventBridge',
-      'AWS Fargate',
-      'AWS Lambda',
-      'GCP',
-      'DynamoDB',
+      'GCP Compute Engine',
+      'Google Kubernetes Engine',
+      'Microservices',
       'Kubernetes',
       'Terraform',
+      'AWS',
       'Docker',
-      'Microservices',
+      'GCP',
+      'Amazon Bedrock',
+      'Amazon EventBridge',
+      'AWS Lambda',
+      'AWS Fargate',
     ],
   },
   {
     group: 'Tools',
+    columns: [5, 3, 4],
     items: [
-      'Git',
-      'Redis',
+      'PyTorch',
+      'MCP',
       'Kafka',
       'Hadoop / MapReduce',
+      'ClickHouse',
+      'Claude Code',
+      'Git',
+      'Codex',
       'FastAPI',
       'PostgreSQL',
       'Neo4J',
-      'PyTorch',
-      'MCP',
-      'Claude Code',
-      'Codex',
+      'Redis',
     ],
   },
 ];
