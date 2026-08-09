@@ -2,55 +2,66 @@
 import { SKILLS } from '../data/experience';
 import * as simpleIcons from 'simple-icons';
 
-// Two ways to supply an icon:
-//   1. A simple-icons slug (see https://simpleicons.org for the full catalog + names).
-//   2. A raw { path } for anything not in simple-icons — grab the SVG's <path d="..."> from
-//      an official brand kit or icon set, viewBox 24x24, and paste it as `{ path: '...' }`.
+// Two ways to supply an icon, keyed by skill name:
+//   1. A simple-icons slug (see https://simpleicons.org for the full catalog + names) — renders
+//      as a monochrome SVG tinted with the page's ink color.
+//   2. An image path pointing at a file in public/images/icons/ (e.g. '/images/icons/aws.jpg') —
+//      any raster or vector image (.jpg, .jpeg, .png, .webp, .svg, .gif) is detected by its
+//      extension and scaled to fit within ~80% of the circle (never cropped).
 // Anything left unmapped falls back to an initials badge (see badgeLabel below).
-type IconRef = keyof typeof simpleIcons | { path: string };
+type IconRef = keyof typeof simpleIcons | string;
+
+const IMAGE_EXT = /\.(png|jpe?g|webp|gif|svg)$/i;
+
+const DEVICON = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
+const ICONS = '/images/icons';
 
 const ICON_SLUGS: Record<string, IconRef> = {
-  'C++': 'siCplusplus',
-  Python: 'siPython',
-  Java: 'siOpenjdk',
-  Go: 'siGo',
-  C: 'siC',
-  Rust: 'siRust',
-  Shell: 'siGnubash',
-  HCL: 'siHcl',
-  Docker: 'siDocker',
-  Kubernetes: 'siKubernetes',
-  Terraform: 'siTerraform',
-  Redis: 'siRedis',
-  Kafka: 'siApachekafka',
-  'Hadoop / MapReduce': 'siApachehadoop',
-  FastAPI: 'siFastapi',
-  PostgreSQL: 'siPostgresql',
-  MySQL: 'siMysql',
-  Neo4J: 'siNeo4j',
-  GCP: 'siGooglecloud',
-  PyTorch: 'siPytorch',
-  'Claude Code': 'siAnthropic',
+  // Programming Languages
+  'C++': `${DEVICON}/cplusplus/cplusplus-original.svg`,
+  C: `${ICONS}/c.svg`,
+  Python: `${DEVICON}/python/python-original.svg`,
+  Java: `${ICONS}/java.svg`,
+  Go: `${ICONS}/go.svg`,
+  Rust: `${DEVICON}/rust/rust-original.svg`,
+  SQL: `${DEVICON}/mysql/mysql-original.svg`,
+  Shell: `${DEVICON}/bash/bash-original.svg`,
 
-  // --- TODO: not in simple-icons (or no real brand mark) — fill in a { path: '...' } above ---
-  // SQL: { path: '' },
-  // 'Distributed Systems': { path: '' },
-  // 'System Design': { path: '' },
-  // 'Database Internals': { path: '' },
-  // Microservices: { path: '' },
-  // 'Concurrency Control': { path: '' },
-  // 'CI/CD': { path: '' },
-  // DynamoDB: { path: '' },
-  // 'AWS (Bedrock, S3, ECS Fargate)': { path: '' },
-  // MCP: { path: '' },
-  // Codex: { path: '' },
+  // Cloud
+  AWS: `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+  'Amazon Bedrock': `${ICONS}/aws-amazon-bedrock.svg`,
+  'Amazon EventBridge': `${ICONS}/aws-amazon-eventbridge.svg`,
+  'AWS Fargate': `${ICONS}/aws-aws-fargate.svg`,
+  'AWS Lambda': `${ICONS}/aws-aws-lambda.svg`,
+  GCP: `${DEVICON}/googlecloud/googlecloud-original.svg`,
+  DynamoDB: `${DEVICON}/dynamodb/dynamodb-original.svg`,
+  Kubernetes: `${DEVICON}/kubernetes/kubernetes-plain.svg`,
+  Terraform: `${DEVICON}/terraform/terraform-original.svg`,
+  Docker: `${DEVICON}/docker/docker-original.svg`,
+  Microservices: `${ICONS}/k8s-service.svg`,
+
+  // Tools
+  Git: `${ICONS}/git.svg`,
+  Redis: `${DEVICON}/redis/redis-original.svg`,
+  Kafka: `${DEVICON}/apachekafka/apachekafka-original.svg`,
+  'Hadoop / MapReduce': `${DEVICON}/hadoop/hadoop-original.svg`,
+  FastAPI: `${DEVICON}/fastapi/fastapi-original.svg`,
+  PostgreSQL: `${DEVICON}/postgresql/postgresql-original.svg`,
+  Neo4J: `${DEVICON}/neo4j/neo4j-original.svg`,
+  PyTorch: `${DEVICON}/pytorch/pytorch-original.svg`,
+  MCP: `${ICONS}/model-context-protocol.svg`,
+  'Claude Code': `${ICONS}/claude-code.svg`,
+  Codex: `${ICONS}/codex.svg`,
 };
 
-function iconPath(name: string): string | null {
+type Icon = { kind: 'svg'; path: string } | { kind: 'image'; src: string };
+
+function iconFor(name: string): Icon | null {
   const ref = ICON_SLUGS[name];
   if (!ref) return null;
-  if (typeof ref === 'string') return simpleIcons[ref]?.path ?? null;
-  return ref.path || null;
+  if (IMAGE_EXT.test(ref)) return { kind: 'image', src: ref };
+  const path = simpleIcons[ref as keyof typeof simpleIcons]?.path;
+  return path ? { kind: 'svg', path } : null;
 }
 
 function badgeLabel(name: string): string {
@@ -66,40 +77,46 @@ function displayName(name: string): string {
   return name.split('(')[0].trim();
 }
 
-const flat = SKILLS.flatMap((group) =>
-  group.items.map((item) => ({ group: group.group, item, icon: iconPath(item) })),
-);
-
-const half = Math.ceil(flat.length / 2);
+const sections = SKILLS.map((group) => ({
+  ...group,
+  items: group.items.map((item) => ({ item, icon: iconFor(item) })),
+}));
 ---
 
-<div class="skills-grid grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-5 lg:grid-cols-8">
+<div class="skills-grid space-y-10">
   {
-    flat.map(({ group, item, icon }, i) => (
-      <div
-        class="skill-cell"
-        data-reveal={i < half ? 'left' : 'right'}
-        style={`transition-delay: ${(i % half) * 45}ms`}
-      >
-        <button
-          type="button"
-          data-skill
-          aria-pressed="false"
-          aria-label={`${item} — ${group}`}
-          class="skill-card"
-        >
-          <span class="skill-face skill-face--front" aria-hidden="true">
-            {icon ? (
-              <svg viewBox="0 0 24 24" fill="currentColor" class="skill-icon" set:html={`<path d="${icon}" />`} />
-            ) : (
-              <span class="skill-fallback">{badgeLabel(item)}</span>
-            )}
-          </span>
-          <span class="skill-face skill-face--back" aria-hidden="true">
-            <span class="skill-name">{displayName(item)}</span>
-            <span class="skill-group">{group}</span>
-          </span>
-        </button>
+    sections.map((section) => (
+      <div class="skill-section">
+        <h3 data-reveal class="skill-section-title font-sans text-sm font-semibold uppercase tracking-wide text-muted">
+          {section.group}
+        </h3>
+        <div class="mt-4 grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-5 lg:grid-cols-8">
+          {section.items.map(({ item, icon }, i) => (
+            <div class="skill-cell" data-reveal={i % 2 === 0 ? 'left' : 'right'} style={`transition-delay: ${i * 45}ms`}>
+              <button
+                type="button"
+                data-skill
+                aria-pressed="false"
+                aria-label={`${item} — ${section.group}`}
+                class="skill-card"
+              >
+                <span class="skill-face skill-face--front" aria-hidden="true">
+                  {icon?.kind === 'svg' ? (
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="skill-icon" set:html={`<path d="${icon.path}" />`} />
+                  ) : icon?.kind === 'image' ? (
+                    <img src={icon.src} alt="" class="skill-icon skill-icon--image" loading="lazy" />
+                  ) : (
+                    <span class="skill-fallback">{badgeLabel(item)}</span>
+                  )}
+                </span>
+                <span class="skill-face skill-face--back" aria-hidden="true">
+                  <span class="skill-name">{displayName(item)}</span>
+                  <span class="skill-group">{section.group}</span>
+                </span>
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     ))
   }
@@ -144,6 +161,7 @@ const half = Math.ceil(flat.length / 2);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     border-radius: 9999px;
     border: 2px solid var(--color-line);
     background: var(--color-surface);
@@ -172,6 +190,12 @@ const half = Math.ceil(flat.length / 2);
       width: 2rem;
       height: 2rem;
     }
+  }
+
+  .skill-icon--image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
   }
 
   .skill-fallback {

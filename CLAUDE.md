@@ -33,7 +33,7 @@ Dynamic pages (`src/pages/blog/[slug].astro`, `src/pages/projects/[slug].astro`)
 |------|----------|
 | `src/data/site.ts` | Name, role, tagline, email, nav links, socials, resume PDF path |
 | `src/data/experience.ts` | Education (`EDUCATION`), work history (`EXPERIENCE`), skills (`SKILLS`) — typed as `TimelineItem[]` |
-| `src/data/photos.ts` | Life photo wall (`PHOTOS`) — `src` paths point into `public/images/life/` |
+| `src/data/photos.ts` | Life photo wall (`PHOTOS`) — `src` paths point into `public/images/life/life/` |
 
 ### Design system
 

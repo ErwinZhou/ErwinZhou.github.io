@@ -73,40 +73,39 @@ export const EXPERIENCE: TimelineItem[] = [
 // A condensed, grouped view of skills for the About page + Experience header.
 export const SKILLS: { group: string; items: string[] }[] = [
   {
-    group: 'Languages',
-    items: ['C++', 'Python', 'Java', 'Go', 'C', 'Rust', 'SQL', 'Shell', 'HCL'],
+    group: 'Programming Languages',
+    items: ['C++', 'C', 'Python', 'Java', 'Go', 'Rust', 'SQL', 'Shell'],
   },
   {
-    group: 'Systems & Backend',
+    group: 'Cloud',
     items: [
-      'Distributed Systems',
-      'System Design',
-      'Database Internals',
-      'Microservices',
-      'Concurrency Control',
-      'CI/CD',
-      'Docker',
+      'AWS',
+      'Amazon Bedrock',
+      'Amazon EventBridge',
+      'AWS Fargate',
+      'AWS Lambda',
+      'GCP',
+      'DynamoDB',
       'Kubernetes',
       'Terraform',
+      'Docker',
+      'Microservices',
+    ],
+  },
+  {
+    group: 'Tools',
+    items: [
+      'Git',
       'Redis',
       'Kafka',
       'Hadoop / MapReduce',
       'FastAPI',
-    ],
-  },
-  {
-    group: 'Data & Cloud',
-    items: [
       'PostgreSQL',
-      'MySQL',
       'Neo4J',
-      'DynamoDB',
-      'AWS (Bedrock, S3, ECS Fargate)',
-      'GCP',
+      'PyTorch',
+      'MCP',
+      'Claude Code',
+      'Codex',
     ],
-  },
-  {
-    group: 'AI Infra',
-    items: ['PyTorch', 'MCP', 'Claude Code', 'Codex'],
   },
 ];
