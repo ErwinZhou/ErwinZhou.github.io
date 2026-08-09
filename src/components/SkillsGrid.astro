@@ -83,14 +83,15 @@ const sections = SKILLS.map((group) => ({
 }));
 ---
 
-<div class="skills-grid space-y-10">
+{/* Below md: a plain stacked list — the wedge shape needs room the triangles don't have on narrow screens. */}
+<div class="skills-grid space-y-10 md:hidden">
   {
     sections.map((section) => (
       <div class="skill-section">
         <h3 data-reveal class="skill-section-title font-sans text-sm font-semibold uppercase tracking-wide text-muted">
           {section.group}
         </h3>
-        <div class="mt-4 grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-5 lg:grid-cols-8">
+        <div class="mt-4 grid grid-cols-4 gap-4 sm:grid-cols-6 sm:gap-5">
           {section.items.map(({ item, icon }, i) => (
             <div class="skill-cell" data-reveal={i % 2 === 0 ? 'left' : 'right'} style={`transition-delay: ${i * 45}ms`}>
               <button
@@ -122,9 +123,52 @@ const sections = SKILLS.map((group) => ({
   }
 </div>
 
+{/* md and up: three triangular zones meeting at a center point, one per group. */}
+<div class="skills-wedge hidden md:block" data-reveal>
+  <div class="wedge-bg wedge-bg--a" aria-hidden="true"></div>
+  <div class="wedge-bg wedge-bg--b" aria-hidden="true"></div>
+  <div class="wedge-bg wedge-bg--c" aria-hidden="true"></div>
+  <div class="wedge-center" aria-hidden="true"></div>
+
+  {
+    sections.map((section, s) => (
+      <div class={`wedge-content wedge-content--${['a', 'b', 'c'][s]}`}>
+        <h3 class="skill-section-title font-sans text-sm font-semibold uppercase tracking-wide text-muted">
+          {section.group}
+        </h3>
+        <div class="wedge-icons">
+          {section.items.map(({ item, icon }, i) => (
+            <button
+              type="button"
+              data-skill
+              aria-pressed="false"
+              aria-label={`${item} — ${section.group}`}
+              class="skill-card skill-card--wedge"
+              style={`--wedge-tilt: ${((i * 37) % 11) - 5}deg; --wedge-shift: ${((i * 17) % 9) - 4}px;`}
+            >
+              <span class="skill-face skill-face--front" aria-hidden="true">
+                {icon?.kind === 'svg' ? (
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="skill-icon" set:html={`<path d="${icon.path}" />`} />
+                ) : icon?.kind === 'image' ? (
+                  <img src={icon.src} alt="" class="skill-icon skill-icon--image" loading="lazy" />
+                ) : (
+                  <span class="skill-fallback">{badgeLabel(item)}</span>
+                )}
+              </span>
+              <span class="skill-face skill-face--back" aria-hidden="true">
+                <span class="skill-name">{displayName(item)}</span>
+                <span class="skill-group">{section.group}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>
+
 <script>
-  const grid = document.querySelector('.skills-grid');
-  grid?.addEventListener('click', (event) => {
+  document.addEventListener('click', (event) => {
     const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-skill]');
     if (!button) return;
     const isOpen = button.getAttribute('aria-pressed') === 'true';
@@ -246,6 +290,124 @@ const sections = SKILLS.map((group) => ({
   @media (hover: hover) and (pointer: fine) {
     .skill-card:hover {
       transform: rotateY(180deg);
+    }
+  }
+
+  /* --- Wedge layout (md and up): three triangles meeting at a center point --- */
+  .skills-wedge {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border: 1px solid var(--color-line);
+    border-radius: 1.25rem;
+    background: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .wedge-bg {
+    position: absolute;
+    inset: 0;
+  }
+  .wedge-bg--a {
+    clip-path: polygon(0 0, 100% 0, 50% 56%);
+    background: var(--color-surface);
+  }
+  .wedge-bg--b {
+    clip-path: polygon(0 0, 50% 56%, 0 100%);
+    background: var(--color-bg);
+  }
+  .wedge-bg--c {
+    clip-path: polygon(100% 0, 100% 100%, 50% 56%);
+    background: color-mix(in srgb, var(--color-surface) 100%, var(--color-ink) 6%);
+  }
+
+  .wedge-center {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-line);
+    box-shadow: 0 2px 10px -4px color-mix(in srgb, var(--color-ink) 20%, transparent);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  .wedge-center::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: var(--color-accent);
+    transform: translate(-50%, -50%);
+  }
+
+  .wedge-content {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .wedge-content--a {
+    top: 2.5rem;
+    left: 50%;
+    width: min(85%, 32rem);
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+  }
+  .wedge-content--b {
+    bottom: 2.5rem;
+    left: 2rem;
+    width: min(46%, 15rem);
+  }
+  .wedge-content--c {
+    bottom: 2.5rem;
+    right: 2rem;
+    width: min(46%, 15rem);
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .wedge-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .wedge-content--a .wedge-icons {
+    justify-content: center;
+  }
+  .wedge-content--c .wedge-icons {
+    justify-content: flex-end;
+  }
+
+  .skill-card--wedge {
+    width: 3.25rem;
+    height: 3.25rem;
+    transform: rotate(var(--wedge-tilt, 0deg)) translateY(var(--wedge-shift, 0px));
+  }
+  .skill-card--wedge .skill-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+  .skill-card--wedge .skill-name {
+    font-size: 0.5rem;
+  }
+  .skill-card--wedge .skill-group {
+    font-size: 0.4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .skills-wedge {
+      aspect-ratio: 16 / 9;
+    }
+    .wedge-content--b,
+    .wedge-content--c {
+      width: min(40%, 17rem);
     }
   }
 </style>
