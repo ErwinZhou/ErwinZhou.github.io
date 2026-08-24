@@ -1,0 +1,59 @@
+---
+title: 'A Globally Distributed Key-Value Store for a Multiplayer Game'
+summary: 'Built a globally distributed, highly available key-value store using the Actor Model to back a multiplayer game, with actor-based concurrency and eventual consistency across geographically distributed replicas.'
+stack: ['Distributed Systems', 'Actor Model', 'RPC', 'Consistency']
+featured: false
+order: 7
+date: 2025-10-01
+---
+
+> ⚠️ Placeholder write-up — metrics are from the source description; prose and the architecture
+> diagram are stand-ins to refine. Course/assignment specifics are private per academic-integrity
+> policy, so this describes work on a multiplayer game backend generically, without naming the
+> private course codebase.
+
+## Overview
+
+A globally distributed, highly available key-value storage system built using the Actor Model,
+designed to back a multiplayer online game where players and state are spread across geographic
+regions.
+
+## Problem
+
+A multiplayer game backend needs to serve reads and writes fast wherever a player connects from,
+while staying available even when individual nodes or regions have trouble. Strong consistency
+across geo-distributed replicas would mean paying cross-region round trips on every write, so the
+system instead has to reason carefully about *how much* consistency it can give up, and where.
+
+## Architecture
+
+```
+Region A actors ◄──RPC──► Region B actors ◄──RPC──► Region C actors
+      │                         │                         │
+   local KV store          local KV store            local KV store
+      └────────────── eventual consistency (last-writer-wins) ──────────────┘
+```
+
+*(Replace with a real diagram — e.g. exported from Excalidraw.)*
+
+## What I built
+
+- A **key-value store** organized around the **Actor Model**, where each actor owns a slice of
+  state and communicates with others only via message passing / RPC.
+- **Geo-distributed replication** across regions, keeping reads and writes local to the nearest
+  replica rather than routing through a single central store.
+- **Eventual consistency** with **last-writer-wins** conflict resolution between replicas that
+  diverge before syncing.
+- Integration as the backing store for a **multiplayer game backend**, where low read/write
+  latency matters more than immediate cross-region consistency.
+
+## Results
+
+- A working, geo-distributed KV store that serves a multiplayer game backend with local read/write
+  latency and eventual convergence across regions.
+
+## Trade-offs & limitations
+
+- Last-writer-wins is simple but can silently drop concurrent updates — a CRDT-based approach
+  would preserve more information from concurrent writes at the cost of complexity. *(Expand with
+  your own notes.)*

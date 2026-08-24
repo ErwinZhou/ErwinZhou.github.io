@@ -1,0 +1,63 @@
+---
+title: 'MixNet — Privacy-Preserving Overlay Network'
+summary: 'Built a mix network overlay in C that hides both message contents and communication patterns using redirection, mixing, and source routing, with a custom control and data plane on top of link-state routing.'
+stack: ['C', 'Networking', 'Routing', 'Security']
+featured: false
+order: 11
+date: 2025-08-01
+---
+
+> ⚠️ Placeholder write-up — metrics are from the source description; prose and the architecture
+> diagram are stand-ins to refine. Course/assignment specifics are private per academic-integrity
+> policy, so this describes a networked systems course project generically.
+
+## Overview
+
+A privacy-preserving overlay network — a mix network — implemented in C on top of a custom
+network stack. The goal wasn't just encrypting payloads; it was hiding *communication patterns*
+too, so an observer watching links can't tell who's talking to whom.
+
+## Problem
+
+Encryption alone protects message contents, but traffic analysis can still leak who's
+communicating with whom, when, and how often. A mix network defends against that by redirecting
+and mixing traffic through intermediate nodes so that input/output correlation becomes much
+harder for an observer.
+
+## Architecture
+
+```
+Source node
+   │  (source-routed packet, custom format)
+   ▼
+Mix node 1 ──► Mix node 2 ──► Mix node 3 ──► Destination
+   │               │               │
+   └── control plane: STP + link-state (LSA) routing, Dijkstra shortest paths
+```
+
+*(Replace with a real diagram — e.g. exported from Excalidraw.)*
+
+## What I built
+
+- A **custom packet format** and data-plane packet handling layer for the overlay network.
+- A **control plane** combining the **Spanning Tree Protocol (STP)** for loop-free topology with
+  **link-state routing (LSAs)** flooded across nodes, and **Dijkstra's algorithm** for computing
+  shortest paths from the resulting topology view.
+- **Source routing** so senders embed the path a packet should traverse through the mix nodes.
+- **Redirection and mixing** logic at intermediate nodes to obscure communication patterns, not
+  just message contents.
+- A **PING** utility running over the custom stack, used to validate reachability and routing
+  correctness end-to-end.
+
+## Results
+
+- A working overlay where messages traverse multiple mix nodes end-to-end with both contents and
+  communication patterns obscured from on-path observers.
+- Correct convergence of the control plane (STP + link-state + Dijkstra) validated via PING across
+  the constructed topology.
+
+## Trade-offs & limitations
+
+- Mixing adds latency in exchange for privacy — there's an inherent trade-off between mix delay
+  and anonymity strength that a production system would need to tune. *(Expand with your own
+  notes.)*

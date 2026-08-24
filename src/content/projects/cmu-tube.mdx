@@ -1,0 +1,60 @@
+---
+title: 'Adaptive Bitrate Streaming for Video Delivery'
+summary: 'Designed and optimized a buffer-based adaptive bitrate (ABR) algorithm on a DASH-based video streaming testbed, trading off startup latency, video quality, and playback stability to maximize QoE under realistic last-mile network conditions.'
+stack: ['JavaScript', 'DASH', 'Docker', 'Networking']
+featured: false
+order: 8
+date: 2025-10-01
+---
+
+> ⚠️ Placeholder write-up — metrics are from the source description; prose and the architecture
+> diagram are stand-ins to refine. Course/assignment specifics are private per academic-integrity
+> policy, so this describes work on a DASH-based video streaming testbed generically, without
+> naming the private course codebase.
+
+## Overview
+
+Implemented and tuned an Adaptive Bitrate (ABR) algorithm for video streaming, targeting realistic
+last-mile network conditions rather than a clean, high-bandwidth link. The work sat on top of a
+DASH-based video streaming testbed using the dash.js player, containerized with Docker.
+
+## Problem
+
+ABR algorithms have to make a real-time trade-off every few seconds: start playback quickly, keep
+video quality high, and avoid rebuffering — but you usually can't maximize all three at once,
+especially over a variable, imperfect last-mile connection. The right choice depends on how you
+weigh startup latency, quality, and stability against each other.
+
+## Architecture
+
+```
+Video segments (multiple bitrates)
+        │
+   DASH server ──► dash.js player ──► ABR algorithm (buffer-based)
+        │                                   │
+   Last-mile network                  buffer occupancy, throughput estimate
+   (Docker-simulated conditions)             │
+                                        bitrate selection decision
+```
+
+*(Replace with a real diagram — e.g. exported from Excalidraw.)*
+
+## What I built
+
+- A **buffer-based ABR algorithm** (in the style of BBA-0), selecting bitrate primarily from
+  player buffer occupancy rather than throughput estimation alone.
+- Integration with a **DASH-based video streaming testbed** running the **dash.js** player.
+- A **Docker**-based setup for reproducing realistic last-mile network conditions during testing.
+- Tuning aimed at maximizing overall **Quality of Experience (QoE)** — balancing startup latency,
+  average video quality, and playback stability (rebuffering, quality switches).
+
+## Results
+
+- An ABR algorithm that measurably trades off startup latency, quality, and stability, evaluated
+  under realistic last-mile network conditions on the testbed.
+
+## Trade-offs & limitations
+
+- A purely buffer-based approach reacts to what's already happened in the buffer rather than
+  predicting future throughput — a hybrid buffer + throughput-based approach could do better under
+  fast-changing conditions. *(Expand with your own notes.)*
