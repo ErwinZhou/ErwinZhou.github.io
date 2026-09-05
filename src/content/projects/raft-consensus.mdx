@@ -13,42 +13,4 @@ An implementation of the Raft consensus algorithm in Go — a fully functioning 
 maintains a replicated log across distributed replicas, ensuring fault tolerance and consistency
 even as nodes fail and leaders change.
 
-## Problem
-
-A replicated state machine needs every replica to agree on the same sequence of commands, even
-when nodes crash, messages are delayed, or the network partitions. Raft solves this by electing a
-single leader per term and having it drive log replication, but getting the corner cases right —
-term changes, split votes, log conflicts — is most of the work.
-
-## Architecture
-
-```
-Client ──► Leader ──RPC(AppendEntries)──► Follower
-              │                              │
-              ├──RPC(RequestVote)──► Follower (leader election)
-              │
-        Replicated log ──► committed entries ──► applied to external service
-```
-
-*(Replace with a real diagram — e.g. exported from Excalidraw.)*
-
-## What I built
-
-- **Leader election** via RequestVote RPCs, randomized election timeouts, and term-based
-  tie-breaking to avoid repeated split votes.
-- **Log replication** via AppendEntries RPCs, including heartbeat keep-alives and log
-  consistency checks between leader and followers.
-- **Safe command application**: only committing and applying log entries once they're replicated
-  on a majority of replicas, then handing them off to an external service.
-- **Concurrency control** around the shared Raft state so RPC handlers, election timers, and the
-  apply loop don't race with each other.
-
-## Results
-
-- A working Raft module that elects a leader, replicates a log across replicas, and continues
-  making progress across leader failures and term changes.
-
-## Trade-offs & limitations
-
-- No log compaction/snapshotting in this pass, so the replicated log grows unbounded over a long
-  run — a natural next addition. *(Expand with your own notes.)*
+Continue to update... soon.

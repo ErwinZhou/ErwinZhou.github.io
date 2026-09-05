@@ -12,37 +12,4 @@ date: 2026-02-01
 A distributed search engine over scholarly abstracts, deployed as microservices across a 3-node
 GCP cluster and provisioned with infrastructure-as-code.
 
-## Problem
-
-Scholarly search means ingesting messy web data at scale, building an inverted index, and serving
-multi-user queries quickly — without re-running expensive batch jobs for every request.
-
-## Architecture
-
-```
-Google Scholar (1500+ pages) → parser → 10K+ IEEE abstracts
-        │
-        ▼
-   Kafka topics → MapReduce indexing → inverted index
-        │                                   │
-        └──────────► Query service ◄────────┘   (3-node GCP cluster, Dockerized, Terraform-provisioned)
-```
-
-*(Replace with a real diagram.)*
-
-## What I built
-
-- A **microservices** search engine on a **3-node GCP cluster** using Docker, Kafka, MapReduce, and
-  **Terraform** for provisioning.
-- A pipeline that parsed **1500+ pages** of Google Scholar results into **10K+ IEEE abstracts**.
-- **Asynchronous, multi-user** query workflows.
-
-## Results
-
-- **+37.2%** query efficiency versus the baseline by **conditionally skipping MapReduce jobs** for
-  search-only requests.
-
-## Trade-offs & limitations
-
-- Ranking is term-frequency based; semantic / embedding-based retrieval would improve relevance.
-  *(Add your own reflections.)*
+Continue to update... soon.

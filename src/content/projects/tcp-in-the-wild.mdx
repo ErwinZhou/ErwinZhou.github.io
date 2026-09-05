@@ -12,48 +12,4 @@ date: 2025-09-01
 A reliable transport protocol built from scratch in C, modeled closely on TCP Reno, running on
 top of UDP and evaluated under real, lossy network conditions rather than an idealized simulator.
 
-## Problem
-
-UDP gives you an unreliable, unordered datagram service — no delivery guarantees, no congestion
-awareness. To get TCP-like reliability over it, you need to build your own sliding window,
-retransmission, congestion control, and flow control on top, and have it behave sanely when the
-network is slow, lossy, or bursty.
-
-## Architecture
-
-```
-Application data
-      │
-   Sender: sliding window + congestion control (Reno) + RTT estimation
-      │                              ▲
-      ▼  UDP datagrams               │  ACKs / duplicate ACKs
-   Network (loss, delay, reordering)
-      │
-   Receiver: reassembly + flow control + ACK generation
-      │
-Application data
-```
-
-*(Replace with a real diagram — e.g. exported from Excalidraw.)*
-
-## What I built
-
-- A **sliding-window** reliable delivery layer on top of raw UDP sockets.
-- **Congestion control modeled on TCP Reno**: slow start, congestion avoidance, and fast
-  retransmit/fast recovery on duplicate ACKs.
-- **Flow control** so a fast sender can't overrun a slow receiver's buffer.
-- **RTT estimation** feeding retransmission timeout calculation, so timeouts adapt to real network
-  latency rather than a fixed value.
-- **Packet loss recovery** via retransmission, tested against real network conditions rather than
-  a clean simulated link.
-
-## Results
-
-- A transport protocol that recovers cleanly from loss, reordering, and congestion while running
-  over real network paths, behaving qualitatively like TCP Reno.
-
-## Trade-offs & limitations
-
-- Reno-style congestion control is simpler than modern algorithms (e.g. CUBIC or BBR) and leaves
-  throughput on the table under some loss patterns — a natural next step to explore.
-  *(Expand with your own notes.)*
+Continue to update... soon.
