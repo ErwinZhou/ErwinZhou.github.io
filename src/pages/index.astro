@@ -1,18 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SkillsGrid from '../components/SkillsGrid.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import PostCard from '../components/PostCard.astro';
-import PhotoWall from '../components/PhotoWall.astro';
-import { SITE, SOCIALS, RESUME_PATH } from '../data/site';
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillsGrid from "../components/SkillsGrid.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import PostCard from "../components/PostCard.astro";
+import PhotoWall from "../components/PhotoWall.astro";
+import { SITE, SOCIALS, RESUME_PATH } from "../data/site";
 
-const featured = (await getCollection('projects'))
+const featured = (await getCollection("projects"))
   .filter((p) => p.data.featured)
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection("blog"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
@@ -32,20 +32,35 @@ const posts = (await getCollection('blog'))
         </p>
 
         <div class="mt-7 flex flex-wrap items-center gap-3 font-sans text-sm">
-          <a href="/projects" class="rounded-full bg-ink px-4 py-2 text-bg transition-colors hover:bg-accent-ink">
+          <a
+            href="/projects"
+            class="rounded-full bg-ink px-4 py-2 text-bg transition-colors hover:bg-accent-ink"
+          >
             View projects
           </a>
-          <a href="/blog" class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent">
+          <a
+            href="/blog"
+            class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent"
+          >
             Read the blog
           </a>
-          <a href={RESUME_PATH} class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent">
+          <a
+            href={RESUME_PATH}
+            class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent"
+          >
             resume ↓
           </a>
-          {SOCIALS.map((s) => (
-            <a href={s.href} class="px-1 text-muted transition-colors hover:text-accent" rel="me noopener">
-              {s.label}
-            </a>
-          ))}
+          {
+            SOCIALS.map((s) => (
+              <a
+                href={s.href}
+                class="px-1 text-muted transition-colors hover:text-accent"
+                rel="me noopener"
+              >
+                {s.label}
+              </a>
+            ))
+          }
         </div>
       </div>
 
@@ -65,21 +80,34 @@ const posts = (await getCollection('blog'))
       <h2 class="eyebrow pt-1">About</h2>
       <div class="prose">
         <p>
-          I'm a software engineer and a Master's student in Information Networking at
-          <strong>Carnegie Mellon University</strong>, focused on distributed systems, database
-          internals, and cloud infrastructure. Before CMU I earned a B.E. in Information Security
-          from <strong>Nankai University</strong>.
+          I'm a software engineer and a Master's student in Information
+          Networking at
+          <strong>Carnegie Mellon University</strong>, focused on distributed
+          systems, database internals, and cloud infrastructure. Before CMU I
+          earned a B.E. in Information Security from <strong
+            >Nankai University</strong
+          >.
         </p>
         <p>
-          I like building systems that are <em>practical and reliable</em> — backend services,
-          data pipelines, and the unglamorous infrastructure that keeps them fast under load. Most
-          recently I've worked on agentic infrastructure at <strong>ENFOS</strong> — a
-          ReAct-based multi-agent architecture with hybrid-retrieval context engineering, and the
-          AWS-based (EventBridge, SQS, Lambda, DynamoDB, Bedrock) pipelines behind it.
+          I like systems! They are cool because they tell you everything beyond
+          just the surface. I build systems, too — across internships and
+          personal projects I have built scalable, reliable, and efficient
+          backend and infrastructure. Most recently I applied that systems
+          background to AI agent infrastructure, contributing to the core of
+          ENFOS's first agentic platform, <a
+            href="https://www.linkedin.com/company/enfos/about/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent"
+            >Atlas AI</a
+          >. I implemented its ReAct-based multi-agent architecture, with
+          hybrid-retrieval context engineering, agentic memory, and fully
+          provisioned AWS pipelines (EventBridge, SQS, Lambda, DynamoDB,
+          Bedrock) behind it.
         </p>
         <p>
-          Outside of code I'm a soccer player and a big fan of films and TV. I'm currently seeking
-          <strong>2027 New Grad SDE roles</strong> in the US.
+          Outside of the terminal, I am a huge FC Barcelona fan, and a big nerd for anime, TV, and movies. I'm
+          currently actively seeking <strong>2027 New Grad SDE roles</strong> in the US. Feel free to reach out to me!
         </p>
       </div>
     </div>
@@ -97,7 +125,12 @@ const posts = (await getCollection('blog'))
       <section class="snap-section shell border-t border-line">
         <div data-reveal class="mb-8 flex items-baseline justify-between">
           <h2 class="eyebrow">Selected projects</h2>
-          <a href="/projects" class="font-sans text-sm text-muted hover:text-accent">All projects →</a>
+          <a
+            href="/projects"
+            class="font-sans text-sm text-muted hover:text-accent"
+          >
+            All projects →
+          </a>
         </div>
         <div data-reveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p) => (
@@ -121,7 +154,12 @@ const posts = (await getCollection('blog'))
       <section class="snap-section shell border-t border-line">
         <div data-reveal class="mb-6 flex items-baseline justify-between">
           <h2 class="eyebrow">Latest writing</h2>
-          <a href="/blog" class="font-sans text-sm text-muted hover:text-accent">All posts →</a>
+          <a
+            href="/blog"
+            class="font-sans text-sm text-muted hover:text-accent"
+          >
+            All posts →
+          </a>
         </div>
         <div data-reveal>
           {posts.map((p) => (
@@ -143,7 +181,8 @@ const posts = (await getCollection('blog'))
     <div data-reveal class="mb-6 max-w-xl">
       <h2 class="eyebrow">Life</h2>
       <p class="mt-3 font-sans text-sm leading-relaxed text-muted">
-        A little beyond the terminal — soccer, films, travel, and the people along the way.
+        A little beyond the terminal — soccer, films, travel, and the people
+        along the way.
       </p>
     </div>
     <div data-reveal>
