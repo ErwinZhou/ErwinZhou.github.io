@@ -1,0 +1,192 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillsGrid from "../components/SkillsGrid.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import PostCard from "../components/PostCard.astro";
+import PhotoWall from "../components/PhotoWall.astro";
+import { SITE, SOCIALS, RESUME_PATH } from "../data/site";
+
+const featured = (await getCollection("projects"))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+---
+
+<BaseLayout snap>
+  <!-- Hero -->
+  <section class="snap-section shell">
+    <div class="grid items-center gap-10 sm:grid-cols-[1fr_auto]">
+      <div class="max-w-2xl">
+        <p class="eyebrow">{SITE.role} · {SITE.credentials}</p>
+        <h1 class="mt-4 text-4xl leading-[1.05] tracking-tight sm:text-5xl">
+          Hi, I'm {SITE.name}<span class="text-muted"> ({SITE.altName})</span>.
+        </h1>
+        <p class="mt-5 max-w-xl font-sans text-lg leading-relaxed text-muted">
+          {SITE.tagline}
+        </p>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3 font-sans text-sm">
+          <a
+            href="/projects"
+            class="rounded-full bg-ink px-4 py-2 text-bg transition-colors hover:bg-accent-ink"
+          >
+            View projects
+          </a>
+          <a
+            href="/blog"
+            class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent"
+          >
+            Read the blog
+          </a>
+          <a
+            href={RESUME_PATH}
+            class="rounded-full border border-line px-4 py-2 text-ink transition-colors hover:border-accent"
+          >
+            resume ↓
+          </a>
+          {
+            SOCIALS.map((s) => (
+              <a
+                href={s.href}
+                class="px-1 text-muted transition-colors hover:text-accent"
+                rel="me noopener"
+              >
+                {s.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <img
+        src="/images/Myself.jpeg"
+        alt={`Portrait of ${SITE.name}`}
+        width="180"
+        height="180"
+        class="hidden h-44 w-44 rounded-2xl border border-line object-cover sm:block"
+      />
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="snap-section shell border-t border-line">
+    <div data-reveal class="grid gap-10 sm:grid-cols-[10rem_1fr]">
+      <h2 class="eyebrow pt-1">About</h2>
+      <div class="prose">
+        <p>
+          I'm a software engineer and a Master's student in Information
+          Networking at
+          <strong>Carnegie Mellon University</strong>, focused on distributed
+          systems, database internals, and cloud infrastructure. Before CMU I
+          earned a B.E. in Information Security from <strong
+            >Nankai University</strong
+          >.
+        </p>
+        <p>
+          I like systems! They are cool because they tell you everything beyond
+          just the surface. I build systems, too — across internships and
+          personal projects I have built scalable, reliable, and efficient
+          backend and infrastructure. Most recently I applied that systems
+          background to AI agent infrastructure, contributing to the core of
+          ENFOS's first agentic platform, <a
+            href="https://www.linkedin.com/company/enfos/about/#:~:text=Atlas%20AI%20Agent%20builds%20on%20this%20governed%20data%20to%20deliver%20evidence%2Dbacked%20answers%2C%20insights%2C%20and%20recommendations%20that%20reduce%20manual%20effort%20and%20accelerate%20decision%2Dmaking."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-ink underline decoration-line underline-offset-4 hover:decoration-accent"
+            >Atlas AI</a
+          >. I implemented its ReAct-based multi-agent architecture, with
+          hybrid-retrieval context engineering, agentic memory, and fully
+          provisioned AWS pipelines (EventBridge, SQS, Lambda, DynamoDB,
+          Bedrock) behind it.
+        </p>
+        <p>
+          Outside of the terminal, I am a huge FC Barcelona fan, and a big nerd for anime, TV, and movies. I'm
+          currently actively seeking <strong>2027 New Grad SDE roles</strong> in the US. Feel free to reach out to me!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="snap-section shell border-t border-line">
+    <h2 data-reveal class="eyebrow mb-8 text-center sm:mb-10">Skills</h2>
+    <SkillsGrid />
+  </section>
+
+  <!-- Featured projects -->
+  {
+    featured.length > 0 && (
+      <section class="snap-section shell border-t border-line">
+        <div data-reveal class="mb-8 flex items-baseline justify-between">
+          <h2 class="eyebrow">Selected projects</h2>
+          <a
+            href="/projects"
+            class="font-sans text-sm text-muted hover:text-accent"
+          >
+            All projects →
+          </a>
+        </div>
+        <div data-reveal class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((p) => (
+            <ProjectCard
+              href={`/projects/${p.id}`}
+              title={p.data.title}
+              summary={p.data.summary}
+              stack={p.data.stack}
+              github={p.data.github}
+              demo={p.data.demo}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Latest writing -->
+  {
+    posts.length > 0 && (
+      <section class="snap-section shell border-t border-line">
+        <div data-reveal class="mb-6 flex items-baseline justify-between">
+          <h2 class="eyebrow">Latest writing</h2>
+          <a
+            href="/blog"
+            class="font-sans text-sm text-muted hover:text-accent"
+          >
+            All posts →
+          </a>
+        </div>
+        <div data-reveal>
+          {posts.map((p) => (
+            <PostCard
+              href={`/blog/${p.id}`}
+              title={p.data.title}
+              description={p.data.description}
+              pubDate={p.data.pubDate}
+              tags={p.data.tags}
+            />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Life photo wall -->
+  <section class="snap-section shell border-t border-line">
+    <div data-reveal class="mb-6 max-w-xl">
+      <h2 class="eyebrow">Life</h2>
+      <p class="mt-3 font-sans text-sm leading-relaxed text-muted">
+        A little beyond the terminal — soccer, films, travel, and the people
+        along the way.
+      </p>
+    </div>
+    <div data-reveal>
+      <PhotoWall />
+    </div>
+  </section>
+</BaseLayout>

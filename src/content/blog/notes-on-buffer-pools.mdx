@@ -1,0 +1,33 @@
+---
+title: 'Notes on buffer pool managers'
+description: 'What a buffer pool manager does and why it sits at the heart of a disk-oriented database.'
+pubDate: 2026-06-22
+tags: ['databases', 'systems']
+---
+A disk-oriented database can't keep everything in memory, so it leans on a **buffer pool manager**:
+the layer that decides which pages live in RAM and which get evicted back to disk.
+
+## The core job
+
+The buffer pool sits between query operators and the disk:
+
+```text
+Operators  →  Buffer Pool  →  Disk
+              (pin/unpin,     (pages)
+               eviction)
+```
+
+Three responsibilities matter most:
+
+1. **Pin / unpin** — a page in use must not be evicted out from under a running operator.
+2. **Eviction policy** — when memory is full, choose a victim (LRU-K, CLOCK, …).
+3. **Dirty tracking** — flush modified pages before reusing their frames.
+
+## Why it's worth getting right
+
+> Almost every slow query eventually traces back to a page that wasn't where it needed to be.
+
+Get the eviction policy wrong and you thrash; get pinning wrong and you corrupt data. It's a small
+amount of code with an outsized effect on correctness and latency.
+
+*(Continue with real benchmarks, code, and lessons learned.)*

@@ -1,0 +1,18 @@
+---
+title: 'A High-Performance FP16 GEMM Kernel for NVIDIA Blackwell'
+summary: 'Built a high-performance FP16 GEMM kernel for NVIDIA Blackwell (SM100) GPUs using TVM/TIRX, starting from a minimal single-tile kernel and incrementally layering on optimizations until reaching the structure of production-grade cuBLAS/CUTLASS-style implementations.'
+stack: ['CUDA', 'TVM/TIRX', 'GPU Kernels', 'Tensor Cores']
+featured: false
+order: 5
+date: 2026-02-01
+---
+
+## Overview
+
+A high-performance FP16 GEMM (general matrix multiply) kernel for NVIDIA Blackwell (SM100) GPUs,
+written using TVM/TIRX. I started from a minimal single-tile kernel and incrementally added
+optimization stages — tensor core usage, asynchronous memory movement, pipelining, and warp
+specialization — until the kernel's structure converged toward what production libraries like
+cuBLAS and CUTLASS do.
+
+Continue to update... soon.

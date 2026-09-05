@@ -1,0 +1,19 @@
+---
+title: 'Suffix Speculative Decoding for LLM Serving'
+summary: 'Integrated suffix-based speculative decoding into the Hugging Face generation stack — a draft-model-free proposer reusing repeated context patterns for 1.74x faster decoding — plus a unified verification interface for suffix and tree-based speculation, achieving 1.30x speedup on tree-spec workloads.'
+stack: ['PyTorch', 'LLM Inference', 'Hugging Face Transformers']
+featured: true
+order: 2
+date: 2026-02-01
+github: 'https://github.com/ErwinZhou/transformers'
+---
+
+## Overview
+
+An open-source contribution to Hugging Face's `transformers` generation stack, adding suffix-based
+speculative decoding: a proposer that speeds up autoregressive generation without needing a
+separate draft model, by reusing repeated patterns already present in the context. I also designed
+a unified verification interface so that both suffix-based and tree-based speculative candidates
+can be checked in a single target-model forward pass.
+
+Continue to update... soon.

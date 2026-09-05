@@ -1,0 +1,59 @@
+---
+import { PHOTOS } from '../data/photos';
+---
+
+<!-- Static flush grid, tiles pieced together edge-to-edge like a puzzle -->
+<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5">
+  {
+    PHOTOS.map((photo, i) => (
+      <button
+        type="button"
+        class="block aspect-square overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
+        data-lightbox
+        data-src={photo.src}
+        data-caption={photo.caption}
+        aria-label={`View photo: ${photo.caption}`}
+      >
+        <img
+          src={photo.src}
+          alt={photo.alt}
+          loading={i < 8 ? 'eager' : 'lazy'}
+          decoding="async"
+          class="h-full w-full object-cover"
+        />
+      </button>
+    ))
+  }
+</div>
+
+<!-- Lightbox -->
+<dialog
+  id="lightbox"
+  class="m-auto max-h-[92vh] max-w-[92vw] bg-transparent backdrop:bg-ink/80 backdrop:backdrop-blur-sm"
+>
+  <figure class="flex flex-col items-center gap-3">
+    <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full rounded-xl" />
+    <figcaption id="lightbox-cap" class="font-sans text-sm text-bg"></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const cap = document.getElementById('lightbox-cap');
+
+  if (dialog && img && cap) {
+    document.querySelectorAll<HTMLButtonElement>('[data-lightbox]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        img.src = btn.dataset.src ?? '';
+        img.alt = btn.dataset.caption ?? '';
+        cap.textContent = btn.dataset.caption ?? '';
+        dialog.showModal();
+      });
+    });
+    // Click on backdrop closes.
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  }
+</script>
