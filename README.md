@@ -26,12 +26,12 @@ npm run preview  # preview the production build
 
 | What | Where |
 |------|-------|
-| Name, role, socials, résumé path | `src/data/site.ts` |
+| Name, role, socials, resume path | `src/data/site.ts` |
 | Experience / education / skills | `src/data/experience.ts` |
 | Life photo wall | `src/data/photos.ts` + images in `public/images/life/life/` |
 | Blog posts | `src/content/blog/*.mdx` |
 | Project write-ups | `src/content/projects/*.mdx` |
-| Résumé PDF | `public/files/Yuchen-Zhou-Resume.pdf` |
+| resume PDF | `public/files/Yuchen-Zhou-Resume.pdf` |
 | Colors & typography | `src/styles/global.css` |
 
 ## Deploy
