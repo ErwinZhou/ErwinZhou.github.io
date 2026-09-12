@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { DEMOS } from '../../data/demos';
+---
+
+<BaseLayout title="Demos" description="Interactive things by Yuchen Zhou (Erwin Chow) that run in the browser.">
+  <section class="shell pt-16 pb-10 sm:pt-20">
+    <p class="eyebrow">Demos</p>
+    <h1 class="mt-4 text-3xl tracking-tight sm:text-4xl">Things you can actually play with</h1>
+    <p class="mt-4 max-w-xl font-sans text-sm leading-relaxed text-muted">
+      Projects that run right here in the page, no download and no install. Native code compiled to
+      WebAssembly, mostly.
+    </p>
+  </section>
+
+  <section class="shell pb-10">
+    <div class="grid gap-5 sm:grid-cols-2">
+      {
+        DEMOS.map((d) => (
+          <ProjectCard
+            href={d.href}
+            title={d.title}
+            summary={d.summary}
+            stack={d.stack}
+            github={d.github}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
