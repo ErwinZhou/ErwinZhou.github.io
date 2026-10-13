@@ -1,0 +1,114 @@
+---
+interface Props { slug: string; compact?: boolean }
+const { slug, compact = false } = Astro.props;
+const visuals: Record<string, { label: string; nodes: string[]; note: string }> = {
+  'bustub-dbms': {
+    label: 'DATABASE INTERNALS',
+    nodes: ['SQL execution', 'Buffer pool', 'Disk pages'],
+    note: 'Query processing · Indexing · Storage',
+  },
+  'suffix-speculative-decoding': {
+    label: 'LLM INFERENCE',
+    nodes: ['Context patterns', 'Candidates', 'Verification'],
+    note: 'Propose · Verify · Accept',
+  },
+  'distributed-scholarly-search': {
+    label: 'DISTRIBUTED SEARCH',
+    nodes: ['Search request', 'Kafka workers', 'GCS / Dataproc'],
+    note: 'Crawl · Index · Query',
+  },
+  'personal-portfolio': {
+    label: 'PERSONAL PORTFOLIO',
+    nodes: ['MDX content', 'Astro build', 'GitHub Pages'],
+    note: 'Static pages · Responsive images · WebAssembly demos',
+  },
+};
+const visual = visuals[slug];
+---
+
+{visual && (
+  <figure class:list={['project-visual', { compact }]} aria-label={`${visual.label}: architecture sketch`}>
+    <div class="visual-label">{visual.label}<span>Architecture sketch</span></div>
+    <ol class="nodes" aria-label={visual.note}>
+      {visual.nodes.map((node, i) => (
+        <li class="node">
+          <span class="node-number" aria-hidden="true">0{i + 1}</span>
+          <span class="node-text">{node}</span>
+        </li>
+      ))}
+    </ol>
+    <figcaption>{visual.note}</figcaption>
+  </figure>
+)}
+
+<style>
+  .project-visual {
+    margin: 0;
+    padding: 1.5rem 1.5rem 1.25rem;
+    overflow: hidden;
+    border: 1px solid var(--color-line);
+    border-radius: 1rem;
+    color: var(--color-ink);
+    background: radial-gradient(ellipse at 75% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%), var(--color-surface);
+  }
+  .visual-label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: .5rem;
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    letter-spacing: .08em;
+    color: var(--color-accent-ink);
+  }
+  .visual-label span { color: var(--color-muted); letter-spacing: 0; }
+  .nodes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(.75rem, 3vw, 2.5rem);
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0;
+  }
+  .node {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .75rem;
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
+    border-radius: .75rem;
+    background: var(--color-bg);
+  }
+  .node:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: calc(100% + 1px);
+    top: 50%;
+    width: clamp(.75rem, 3vw, 2.5rem);
+    height: 2px;
+    background: repeating-linear-gradient(to right, var(--color-accent) 0 4px, transparent 4px 12px);
+    animation: flow 2s linear infinite;
+  }
+  .node-number { color: var(--color-muted); font: .7rem var(--font-mono); }
+  .node-text { color: var(--color-ink); font: 1rem var(--font-sans); overflow-wrap: anywhere; }
+  figcaption { font-family: var(--font-sans); font-size: .8rem; color: var(--color-muted); }
+  .compact { border: 0; border-bottom: 1px solid var(--color-line); border-radius: 0; padding: 1.25rem; }
+  .compact .visual-label span { display: none; }
+  .compact figcaption { font-size: .7rem; }
+  .compact .nodes { margin: 1.5rem 0; gap: .75rem; }
+  .compact .node { padding: .75rem .5rem; }
+  .compact .node-text { font-size: .75rem; }
+  .compact .node:not(:last-child)::after { width: .75rem; }
+  @keyframes flow { to { background-position: 24px 0; } }
+  @media (max-width: 480px) {
+    .project-visual { padding: 1rem; }
+    .node { padding: .75rem .5rem; }
+    .node-text { font-size: .8rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .node::after { animation: none !important; }
+  }
+</style>
