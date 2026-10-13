@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Tag from '../../components/Tag.astro';
+import ProjectVisual from '../../components/ProjectVisual.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -51,6 +52,10 @@ const { title, summary, stack, github, demo } = entry.data;
         )
       }
     </header>
+
+    <div class="mt-8">
+      <ProjectVisual slug={entry.id} />
+    </div>
 
     <div class="prose mt-10">
       <Content />

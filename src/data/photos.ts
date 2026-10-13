@@ -24,7 +24,6 @@ export const PHOTOS: Photo[] = [
   { src: '/images/life/life-7.jpeg', alt: 'Life photo', caption: 'Film night' },
   { src: '/images/life/life-9.jpeg', alt: 'Life photo', caption: 'Coffee & code' },
   { src: '/images/life/life-12.jpeg', alt: 'Life photo', caption: 'Somewhere new' },
-  { src: '/images/life/life-enfos.jpg', alt: 'With the ENFOS team', caption: 'The ENFOS team' },
   { src: '/images/life/life-gift.jpeg', alt: 'Barça care package', caption: 'A little Barça care package' },
   { src: '/images/life/life-haniba.jpeg', alt: 'Museum exhibit', caption: 'Silence of the Lambs exhibit' },
 ];

@@ -1,5 +1,6 @@
 ---
 import Tag from './Tag.astro';
+import ProjectVisual from './ProjectVisual.astro';
 
 interface Props {
   href: string;
@@ -12,7 +13,9 @@ interface Props {
 const { href, title, summary, stack = [], github, demo } = Astro.props;
 ---
 
-<article class="group relative flex flex-col rounded-2xl border border-line bg-surface/40 p-6 transition-colors hover:border-accent/40">
+<article class="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/40 transition-colors hover:border-accent/40">
+  <ProjectVisual slug={href.split('/').filter(Boolean).at(-1) ?? ''} compact />
+  <div class="flex flex-1 flex-col p-6">
   <h3 class="text-xl tracking-tight">
     <a href={href} class="after:absolute after:inset-0">
       {title}
@@ -32,5 +35,6 @@ const { href, title, summary, stack = [], github, demo } = Astro.props;
     <span class="text-accent-ink transition-transform group-hover:translate-x-0.5">Read more →</span>
     {github && <a href={github} class="hover:text-ink" rel="noopener">GitHub</a>}
     {demo && <a href={demo} class="hover:text-ink" rel="noopener">Live demo</a>}
+  </div>
   </div>
 </article>
