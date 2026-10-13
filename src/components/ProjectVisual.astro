@@ -1,114 +1,68 @@
 ---
+import { PROJECT_VISUALS } from '../data/project-visuals';
 interface Props { slug: string; compact?: boolean }
 const { slug, compact = false } = Astro.props;
-const visuals: Record<string, { label: string; nodes: string[]; note: string }> = {
-  'bustub-dbms': {
-    label: 'DATABASE INTERNALS',
-    nodes: ['SQL execution', 'Buffer pool', 'Disk pages'],
-    note: 'Query processing · Indexing · Storage',
-  },
-  'suffix-speculative-decoding': {
-    label: 'LLM INFERENCE',
-    nodes: ['Context patterns', 'Candidates', 'Verification'],
-    note: 'Propose · Verify · Accept',
-  },
-  'distributed-scholarly-search': {
-    label: 'DISTRIBUTED SEARCH',
-    nodes: ['Search request', 'Kafka workers', 'GCS / Dataproc'],
-    note: 'Crawl · Index · Query',
-  },
-  'personal-portfolio': {
-    label: 'PERSONAL PORTFOLIO',
-    nodes: ['MDX content', 'Astro build', 'GitHub Pages'],
-    note: 'Static pages · Responsive images · WebAssembly demos',
-  },
-};
-const visual = visuals[slug];
+const visual = PROJECT_VISUALS[slug];
+const id = `architecture-${slug}-${compact ? 'card' : 'detail'}`;
 ---
 
 {visual && (
-  <figure class:list={['project-visual', { compact }]} aria-label={`${visual.label}: architecture sketch`}>
-    <div class="visual-label">{visual.label}<span>Architecture sketch</span></div>
-    <ol class="nodes" aria-label={visual.note}>
-      {visual.nodes.map((node, i) => (
-        <li class="node">
-          <span class="node-number" aria-hidden="true">0{i + 1}</span>
-          <span class="node-text">{node}</span>
-        </li>
-      ))}
-    </ol>
-    <figcaption>{visual.note}</figcaption>
+  <figure class:list={['project-visual', { compact }]}>
+    <div class="visual-heading"><span>{visual.category}</span><span class="visual-index">{visual.index} / SYSTEM STUDY</span></div>
+    <svg viewBox="0 0 640 300" role="img" aria-labelledby={`${id}-title ${id}-desc`}>
+      <title id={`${id}-title`}>{visual.title}</title>
+      <desc id={`${id}-desc`}>{visual.description}</desc>
+      <defs>
+        <pattern id={`${id}-grid`} width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="currentColor" opacity=".15" /></pattern>
+        <marker id={`${id}-arrow`} viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="context-stroke" stroke-width="1.5" /></marker>
+      </defs>
+      <rect width="640" height="300" fill={`url(#${id}-grid)`} />
+      <g set:html={visual.svg.replaceAll('__ID__', id)} />
+    </svg>
+    <figcaption><span>{visual.title}</span><span class="visual-note">{visual.note}</span></figcaption>
   </figure>
 )}
 
 <style>
   .project-visual {
-    margin: 0;
-    padding: 1.5rem 1.5rem 1.25rem;
-    overflow: hidden;
-    border: 1px solid var(--color-line);
-    border-radius: 1rem;
-    color: var(--color-ink);
-    background: radial-gradient(ellipse at 75% 0%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 70%), var(--color-surface);
+    --diagram-paper: color-mix(in srgb, var(--color-bg) 65%, white);
+    --diagram-blue: var(--color-accent-ink);
+    --diagram-teal: color-mix(in srgb, var(--color-accent-ink) 65%, #167e73);
+    --diagram-warm: color-mix(in srgb, var(--color-accent-ink) 25%, #a25636);
+    --diagram-violet: color-mix(in srgb, var(--color-accent-ink) 50%, #7750a0);
+    margin: 0; overflow: hidden;
+    border: 1px solid var(--color-line); border-radius: 1rem;
+    background: var(--diagram-paper); color: var(--color-ink);
   }
-  .visual-label {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: .5rem;
-    font-family: var(--font-mono);
-    font-size: .7rem;
-    letter-spacing: .08em;
-    color: var(--color-accent-ink);
-  }
-  .visual-label span { color: var(--color-muted); letter-spacing: 0; }
-  .nodes {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(.75rem, 3vw, 2.5rem);
-    list-style: none;
-    padding: 0;
-    margin: 3rem 0;
-  }
-  .node {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: .75rem;
-    min-width: 0;
-    padding: 1.25rem;
-    border: 1px solid color-mix(in srgb, var(--color-accent) 50%, transparent);
-    border-radius: .75rem;
-    background: var(--color-bg);
-  }
-  .node:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: calc(100% + 1px);
-    top: 50%;
-    width: clamp(.75rem, 3vw, 2.5rem);
-    height: 2px;
-    background: repeating-linear-gradient(to right, var(--color-accent) 0 4px, transparent 4px 12px);
-    animation: flow 2s linear infinite;
-  }
-  .node-number { color: var(--color-muted); font: .7rem var(--font-mono); }
-  .node-text { color: var(--color-ink); font: 1rem var(--font-sans); overflow-wrap: anywhere; }
-  figcaption { font-family: var(--font-sans); font-size: .8rem; color: var(--color-muted); }
-  .compact { border: 0; border-bottom: 1px solid var(--color-line); border-radius: 0; padding: 1.25rem; }
-  .compact .visual-label span { display: none; }
-  .compact figcaption { font-size: .7rem; }
-  .compact .nodes { margin: 1.5rem 0; gap: .75rem; }
-  .compact .node { padding: .75rem .5rem; }
-  .compact .node-text { font-size: .75rem; }
-  .compact .node:not(:last-child)::after { width: .75rem; }
-  @keyframes flow { to { background-position: 24px 0; } }
+  .visual-heading, figcaption { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem 0; }
+  .visual-heading { color: var(--color-accent-ink); font: 600 .7rem var(--font-mono); letter-spacing: .08em; }
+  .visual-index { font-size: .6rem; font-weight: 400; color: var(--color-muted); }
+  svg { display: block; width: 100%; height: auto; }
+  figcaption { padding: 0 1.5rem 1.25rem; font: 600 1rem var(--font-sans); }
+  .visual-note { max-width: 48%; font: .7rem var(--font-mono); text-align: right; color: var(--color-muted); }
+  .compact { border: 0; border-bottom: 1px solid var(--color-line); border-radius: 0; }
+  .compact .visual-heading { padding: 1rem 1.25rem 0; font-size: .6rem; }
+  .compact figcaption { padding: 0 1.25rem 1rem; font-size: .85rem; }
+  .compact .visual-note, .compact .visual-index { display: none; }
+  svg :global(.zone) { fill: color-mix(in srgb, var(--color-surface) 30%, transparent); stroke: var(--color-line); stroke-width: 1.2; stroke-dasharray: 4 5; }
+  svg :global(.shape) { fill: var(--diagram-paper); stroke: var(--tone, var(--diagram-blue)); stroke-width: 1.6; }
+  svg :global(.tint) { fill: color-mix(in srgb, var(--tone, var(--diagram-blue)) 12%, var(--diagram-paper)); }
+  svg :global(.blue) { --tone: var(--diagram-blue); }
+  svg :global(.teal) { --tone: var(--diagram-teal); }
+  svg :global(.warm) { --tone: var(--diagram-warm); }
+  svg :global(.violet) { --tone: var(--diagram-violet); }
+  svg :global(.wire) { fill: none; stroke: var(--tone, var(--diagram-blue)); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  svg :global(.flow) { stroke-dasharray: 5 7; animation: travel 18s linear infinite; }
+  svg :global(.faint) { opacity: .35; }
+  svg :global(.label) { fill: var(--color-ink); font: 500 17px var(--font-sans); text-anchor: middle; }
+  svg :global(.small) { fill: var(--color-muted); font: 12px var(--font-mono); text-anchor: middle; }
+  svg :global(.zone-label) { fill: var(--color-muted); font: 11px var(--font-mono); letter-spacing: 1px; }
+  svg :global(.symbol) { fill: var(--tone, var(--diagram-blue)); font: 22px var(--font-mono); text-anchor: middle; }
+  svg :global(.solid) { fill: var(--tone, var(--diagram-blue)); }
+  @keyframes travel { to { stroke-dashoffset: -120; } }
   @media (max-width: 480px) {
-    .project-visual { padding: 1rem; }
-    .node { padding: .75rem .5rem; }
-    .node-text { font-size: .8rem; }
+    .visual-heading, figcaption { padding-inline: 1rem; }
+    .visual-index, .visual-note { display: none; }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .node::after { animation: none !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { svg :global(.flow) { animation: none; } }
 </style>
