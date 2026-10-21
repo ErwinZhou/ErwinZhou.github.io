@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Tag from '../../components/Tag.astro';
+import { DEMOS } from '../../data/demos';
+
+const demo = DEMOS.find((d) => d.href === '/demos/righteous-knight')!;
+// The original Twine export includes the story and Harlowe runtime in one file.
+// Keep it isolated from the portfolio's styles and scripts.
+const GAME_URL = `${demo.embed}index.html`;
+---
+
+<BaseLayout
+  title={demo.title}
+  description="A branching text adventure by Yuchen Zhou. Read, make your choices, and find out what it takes to be a righteous knight. Play the original Twine story in your browser."
+>
+  <div class="mx-auto w-full max-w-[1232px] px-4 pt-16 pb-16 sm:pt-20">
+    <p class="eyebrow text-center">Demo</p>
+    <h1 class="mt-4 text-center text-3xl tracking-tight sm:text-4xl">{demo.title}</h1>
+    <p class="mt-3 text-center font-sans text-lg text-accent-ink italic">“Be a good man.”</p>
+
+    <div class="mt-6 flex flex-wrap justify-center gap-1.5">
+      {demo.stack.map((s) => <Tag label={s} />)}
+    </div>
+
+    <iframe
+      id="story"
+      src={GAME_URL}
+      title="Play A Righteous Knight — interactive story"
+      sandbox="allow-scripts"
+      class="mt-8 block w-full rounded-lg border border-line"
+    ></iframe>
+
+    <div class="mt-3 flex flex-wrap items-center justify-between gap-3 font-sans text-sm text-muted">
+      <button id="restart-story" type="button" aria-expanded="false" aria-controls="restart-confirmation" class="cursor-pointer text-accent-ink hover:text-ink">
+        Restart story ↺
+      </button>
+      <a href={GAME_URL} target="_blank" rel="noopener" class="text-accent-ink hover:text-ink">
+        Open in a new tab ↗
+      </a>
+    </div>
+
+    <div id="restart-confirmation" hidden class="mt-4 rounded-lg border border-line bg-surface p-4 font-sans text-sm text-muted">
+      <p>Restart the story? Your current progress will be lost.</p>
+      <div class="mt-3 flex gap-5">
+        <button id="confirm-restart" type="button" class="cursor-pointer text-accent-ink hover:text-ink">Restart</button>
+        <button id="cancel-restart" type="button" class="cursor-pointer hover:text-ink">Keep reading</button>
+      </div>
+    </div>
+
+    <div class="mx-auto w-full max-w-[704px]">
+      <noscript>
+        <p class="mt-3 font-sans text-sm text-muted">Enable JavaScript to play this interactive story.</p>
+      </noscript>
+
+      <p class="mt-6 font-sans text-base leading-relaxed text-muted">
+        Read each passage, then click or tap a highlighted choice to continue. You can also use
+        <kbd>Tab</kbd> to focus a choice and <kbd>Enter</kbd> to follow it. Scroll inside the story
+        to read longer passages, and use its back arrow to revisit a choice. Want to try another
+        path? Restart the story above.
+      </p>
+
+      <p class="mt-8 font-sans text-base leading-relaxed text-muted">
+        Have you ever dreamt of being a knight? A knight who fights for the people. The realm is
+        suffering under a cruel king, and now it is your chance to do something about it. Be careful
+        with what you choose. Different paths lie ahead. Draw your sword, knight!
+      </p>
+
+      <img
+        src={`${demo.embed}screenshot-native.png`}
+        width="800"
+        height="600"
+        alt="The native C++ version of A Righteous Knight, with the opening passage and its first choice"
+        loading="lazy"
+        class="mx-auto mt-8 w-full max-w-[520px] rounded-lg border border-line"
+      />
+      <p class="mt-2 text-center font-sans text-xs text-muted">The native C++ version.</p>
+
+      <p class="mt-8 font-sans text-base leading-relaxed text-muted">
+        I wrote the story in Twine and connected the passages with choices. This demo runs the original
+        Twine HTML export. For the native game, a Python asset pipeline compiles the same story into a
+        binary passage graph. C++ follows those choices, HarfBuzz shapes the text, FreeType rasterizes
+        the glyphs, and OpenGL draws them from a shared texture atlas.
+      </p>
+      <p class="mt-3 font-sans text-base leading-relaxed text-muted">
+        Source code on
+        <a href={demo.github} rel="noopener" class="text-accent-ink hover:text-ink">GitHub</a>.
+      </p>
+
+      <div class="mt-8 font-sans text-sm leading-relaxed text-muted">
+        <p>
+          Story written in
+          <a href="https://twinery.org/" rel="noopener" class="text-accent-ink hover:text-ink">Twine</a>,
+          using the Harlowe story format.
+        </p>
+        <p>
+          Native game built with
+          <a href={`${demo.github}/blob/main/NEST.md`} rel="noopener" class="text-accent-ink hover:text-ink">NEST</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  #story {
+    height: 620px;
+    height: clamp(400px, 75svh, 620px);
+    color-scheme: dark;
+  }
+  kbd {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-bottom-width: 2px;
+    border-radius: 3px;
+    padding: 0.1em 0.4em;
+    color: var(--color-ink);
+  }
+</style>
+
+<script>
+  const story = document.querySelector<HTMLIFrameElement>('#story');
+  const restart = document.querySelector<HTMLButtonElement>('#restart-story');
+  const confirmation = document.querySelector<HTMLDivElement>('#restart-confirmation');
+  const confirmRestart = document.querySelector<HTMLButtonElement>('#confirm-restart');
+  const cancelRestart = document.querySelector<HTMLButtonElement>('#cancel-restart');
+
+  function closeConfirmation() {
+    if (confirmation) confirmation.hidden = true;
+    restart?.setAttribute('aria-expanded', 'false');
+  }
+
+  restart?.addEventListener('click', () => {
+    if (confirmation) {
+      confirmation.hidden = false;
+      restart.setAttribute('aria-expanded', 'true');
+      cancelRestart?.focus();
+    }
+  });
+
+  confirmRestart?.addEventListener('click', () => {
+    if (story) {
+      // The sandbox gives each load a fresh session, so Harlowe cannot restore
+      // the previous passage or share its generic session key with other demos.
+      story.src = story.src;
+      closeConfirmation();
+      story.focus();
+    }
+  });
+
+  cancelRestart?.addEventListener('click', () => {
+    closeConfirmation();
+    restart?.focus();
+  });
+
+  confirmation?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeConfirmation();
+      restart?.focus();
+    }
+  });
+</script>
