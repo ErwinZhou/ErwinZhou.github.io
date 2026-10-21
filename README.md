@@ -37,4 +37,22 @@ npm run preview  # preview the production build
 ## Deploy
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the Astro site and publishes
-it to GitHub Pages. Work happens on `dev-v2.0`; merge to `main` to go live.
+it to GitHub Pages. Work on the current development branch; merge to `main` to go live.
+
+## Playable demos
+
+Demo listings live in `src/data/demos.ts`; their pages live in `src/pages/demos/`.
+The game files are checked into `public/games/` and copied into the static build, so GitHub Pages
+serves them without a game server or an additional build toolchain.
+
+- `/demos/droplet`: the Emscripten / WebAssembly build of Watch Out for The Droplet!
+- `/demos/righteous-knight`: the original Twine / Harlowe HTML export of A Righteous Knight,
+  embedded in an isolated iframe. The page also shows the native C++ game's screenshot and
+  explains its rendering pipeline. The browser demo uses Twine's click / Tab / Enter controls.
+
+To update A Righteous Knight, copy `assets/story/righteous-knight.html` from
+[`ErwinZhou/righteous-knight`](https://github.com/ErwinZhou/righteous-knight) to
+`public/games/righteous-knight/index.html`, and `screenshots/screenshot.png` to
+`public/games/righteous-knight/screenshot-native.png`. Keep the HTML export intact: it includes
+both the complete story and the Harlowe runtime. Its sandbox allows scripts and isolates storage,
+so **Restart story** reloads the opening passage without restoring an old session.

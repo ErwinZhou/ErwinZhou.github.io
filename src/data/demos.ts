@@ -11,4 +11,13 @@ export const DEMOS = [
     // path under /public that the demo page embeds:
     embed: '/games/droplet/',
   },
+  {
+    href: '/demos/righteous-knight',
+    title: 'A Righteous Knight',
+    summary:
+      'A branching text adventure about a knight, a cruel king, and the cost of doing the right thing. Written in Twine and also built as a native C++ game; play the original story here in the browser.',
+    stack: ['Twine', 'Harlowe', 'C++', 'FreeType', 'HarfBuzz'],
+    github: 'https://github.com/ErwinZhou/righteous-knight',
+    embed: '/games/righteous-knight/',
+  },
 ] as const;
